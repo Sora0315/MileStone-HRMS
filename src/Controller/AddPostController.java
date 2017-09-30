@@ -49,7 +49,7 @@ public class AddPostController implements Initializable {
             }
             else{
                 NoticeController.noticecontent = "請輸入必要資料！";
-                StageControll.open(NoticeController.class, "Notice.fxml");
+                StageControll.open(NoticeController.class, "/View/Notice.fxml");
             }
         }
     }
@@ -60,7 +60,7 @@ public class AddPostController implements Initializable {
             Data_Save("Position", "Post_ID, Post_Name, Duty", pid, pname, duty);
         }
         StageControll.close(PAP);
-        StageControll.open(AddPostController.class, "AddPost.fxml");
+        StageControll.open(AddPostController.class, "/View/AddPost.fxml");
     }
     
     public void Data_Save(String table, String itemnum, TextField id, TextField name, TextField name2) throws Exception {
@@ -79,6 +79,6 @@ public class AddPostController implements Initializable {
     @FXML
     public void btn_back(MouseEvent event) throws Exception{
         StageControll.close(PAP);
-        StageControll.open(PreparationController.class, "Preparation.fxml");
+        StageControll.open(PreparationController.class, "/View/Preparation.fxml");
     }
 }

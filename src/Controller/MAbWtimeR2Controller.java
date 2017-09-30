@@ -81,8 +81,8 @@ public class MAbWtimeR2Controller implements Initializable {
         search_and_setdata(" day(cast(a.EndD as date)) ", ed);
         search_and_setdata(" datepart(hh, a.EndD) ", eh);
         search_and_setdata(" datepart(mi, a.EndD) ", emin);
-        search_and_setdata(" substring(a.Interval, 1, 2) ", d);
-        search_and_setdata(" substring(a.Interval, 5, 4) ", h);
+        search_and_setdata(" (a.Interval)/24 ", d);
+        search_and_setdata(" (a.Interval)%24 ", h);
         String sql = "use MileStoneHRMS select a.LO_ID "
                 + " from AbWorktimeR as a left outer join LO as l on l.LO_ID = a.LO_ID "
                 + " where a.P_ID = " + "'" + id.getText() + "'"
@@ -195,7 +195,7 @@ public class MAbWtimeR2Controller implements Initializable {
                 if (d.getText().isEmpty() && h.getText().isEmpty()) {
                     pstmt.setNull(4, java.sql.Types.VARCHAR);
                 } else {
-                    pstmt.setString(4, d.getText() + " 日 " + h.getText() + "    時");
+                    pstmt.setString(4, String.valueOf(Integer.valueOf(d.getText()) * 24 + Integer.valueOf(h.getText())));
                 }
                 SQLTools.emptyslotsetnull(cause, pstmt, 5);
                 pstmt.execute();

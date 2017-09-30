@@ -21,12 +21,9 @@ import javafx.scene.layout.AnchorPane;
  */
 public class AddBonusController implements Initializable {
 
-    @FXML
-    public AnchorPane BAP;
-    @FXML
-    public TextField bid, bname;
-    @FXML
-    public Button back, set, submit;
+    @FXML public AnchorPane BAP;
+    @FXML public TextField bid, bname;
+    @FXML public Button back, set, submit;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -49,9 +46,12 @@ public class AddBonusController implements Initializable {
                 bid.setText(id);
                 submit.setDisable(false);
             } else {
-                NoticeController.noticecontent = "請輸入必要資料！";
+                NoticeController.noticecontent = "資料已經存在！";
                 StageControll.open(NoticeController.class, "/View/Notice.fxml");
             }
+        } else {
+            NoticeController.noticecontent = "請輸入必要資料！";
+            StageControll.open(NoticeController.class, "/View/Notice.fxml");
         }
     }
 

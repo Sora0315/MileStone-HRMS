@@ -20,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
  * @author Sora
  */
 public class AddSpecController implements Initializable {
+    
     @FXML public AnchorPane SAP;
     @FXML public TextField sid, sname;
     @FXML public Button back, set, submit;
@@ -45,10 +46,13 @@ public class AddSpecController implements Initializable {
                 sid.setText(id);
                 submit.setDisable(false);
             }
-            else{
-                NoticeController.noticecontent = "請輸入必要資料！";
-                StageControll.open(NoticeController.class, "/View/Notice.fxml"); 
+            else {
+                NoticeController.noticecontent = "資料已經存在！";
+                StageControll.open(NoticeController.class, "/View/Notice.fxml");
             }
+        } else {
+            NoticeController.noticecontent = "請輸入必要資料！";
+            StageControll.open(NoticeController.class, "/View/Notice.fxml");
         }
     }
     

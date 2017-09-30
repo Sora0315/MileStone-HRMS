@@ -40,7 +40,7 @@ public class StageControll {
         Parent root = (Parent)fxmlLoader.load();
         Scene scene = new Scene(root);
         stg = new Stage();
-        Image img = new Image("file:D:\\Java NetBean\\MileStone HRMS\\src\\package\\Icon.png ");
+        Image img = new Image("file:D:\\Java NetBean\\MileStoneHRMS\\src\\package\\Icon.png ");
         stg.getIcons().add(img);
         stg.setScene(scene);
         stg.setTitle("MileStone, Ltd. HRMS");
@@ -54,7 +54,7 @@ public class StageControll {
         Parent root = (Parent)fxmlLoader.load();
         Scene scene = new Scene(root);
         stg = new Stage();
-        Image img = new Image("file:D:\\Java NetBean\\MileStone HRMS\\src\\package\\Icon.png ");
+        Image img = new Image("file:D:\\Java NetBean\\MileStoneHRMS\\src\\package\\Icon.png ");
         stg.getIcons().add(img);
         stg.setScene(scene);
         stg.setTitle("MileStone, Ltd. HRMS");

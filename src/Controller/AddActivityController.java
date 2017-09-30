@@ -17,17 +17,13 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
- *
  * @author Sora
  */
 public class AddActivityController implements Initializable {
 
-    @FXML
-    public AnchorPane AAP;
-    @FXML
-    public TextField aid, aname;
-    @FXML
-    public Button back, set, submit;
+    @FXML public AnchorPane AAP;
+    @FXML public TextField aid, aname;
+    @FXML public Button back, set, submit;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -50,9 +46,12 @@ public class AddActivityController implements Initializable {
                 aid.setText(id);
                 submit.setDisable(false);
             } else {
-                NoticeController.noticecontent = "請輸入必要資料！";
+                NoticeController.noticecontent = "資料已經存在！";
                 StageControll.open(NoticeController.class, "/View/Notice.fxml");
             }
+        } else {
+            NoticeController.noticecontent = "請輸入必要資料！";
+            StageControll.open(NoticeController.class, "/View/Notice.fxml");
         }
     }
 

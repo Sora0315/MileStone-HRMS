@@ -40,7 +40,7 @@ public class AddSchoolDepController implements Initializable {
     
     @FXML
     public void set_schoolid(MouseEvent event) throws Exception{
-        if(!schname.getText().isEmpty()){
+        if(!schname.getText().isEmpty() || schname.getText().trim().length()!=0){
             String ask = "use MileStoneHRMS select s.School_Name from GSch as s where s.School_Name = ";
             if(SQLTools.ValueGetId(ask, schname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(s.School_ID, 4, 8) as int) from GSch as s";
@@ -49,10 +49,13 @@ public class AddSchoolDepController implements Initializable {
                 schid.setText(id);
                 submit.setDisable(false);
             }
-            else{
-                NoticeController.noticecontent = "請輸入必要資料！";
-                StageControll.open(NoticeController.class, "/View/Notice.fxml"); 
+            else {
+                NoticeController.noticecontent = "資料已經存在！";
+                StageControll.open(NoticeController.class, "/View/Notice.fxml");
             }
+        } else {
+            NoticeController.noticecontent = "請輸入必要資料！";
+            StageControll.open(NoticeController.class, "/View/Notice.fxml");
         }
     }
     
@@ -67,10 +70,13 @@ public class AddSchoolDepController implements Initializable {
                 depid.setText(id);
                 submit.setDisable(false);
             }
-            else{
-                NoticeController.noticecontent = "請輸入必要資料！";
-                StageControll.open(NoticeController.class, "/View/Notice.fxml"); 
+            else {
+                NoticeController.noticecontent = "資料已經存在！";
+                StageControll.open(NoticeController.class, "/View/Notice.fxml");
             }
+        } else {
+            NoticeController.noticecontent = "請輸入必要資料！";
+            StageControll.open(NoticeController.class, "/View/Notice.fxml");
         }
     }
     

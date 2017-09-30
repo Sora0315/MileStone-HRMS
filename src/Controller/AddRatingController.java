@@ -46,10 +46,13 @@ public class AddRatingController implements Initializable {
                 rid.setText(id);
                 submit.setDisable(false);
             }
-            else{
-                NoticeController.noticecontent = "請輸入必要資料！";
+            else {
+                NoticeController.noticecontent = "資料已經存在！";
                 StageControll.open(NoticeController.class, "/View/Notice.fxml");
             }
+        } else {
+            NoticeController.noticecontent = "請輸入必要資料！";
+            StageControll.open(NoticeController.class, "/View/Notice.fxml");
         }
     }
     
