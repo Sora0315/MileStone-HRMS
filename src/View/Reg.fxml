@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="RAP" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controller.RegController">
+    <stylesheets>
+        <URL value="@../Style/login.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="63.0" text="HR Management System" />
+        <Label id="title" layoutX="14.0" layoutY="14.0" text="MileStone, Ltd." />
+        <GridPane layoutX="164.0" layoutY="107.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="600.0" minWidth="600.0" prefWidth="600.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label id="red" text="!注意! 僅限本公司職員註冊帳號" />
+                <Label id="red" text="主管或人資請於註冊後通知系統管理員，辦理群組變更" GridPane.rowIndex="1" />
+                <Label text="員工編號：" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                <Label text="登入帳號：" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                <Label text="登入密碼：" GridPane.halignment="LEFT" GridPane.rowIndex="7" />
+                <Label text="登入群組： Staff (預設)" GridPane.halignment="LEFT" GridPane.rowIndex="9" /> 
+                <TextField fx:id="pid" maxHeight="40.0" maxWidth="475.0" minHeight="40.0" minWidth="475.0" onKeyReleased="#set_r_enable" prefHeight="40.0" prefWidth="475.0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                <TextField fx:id="id" maxHeight="40.0" maxWidth="475.0" minHeight="40.0" minWidth="475.0" onKeyReleased="#set_r_enable" prefHeight="40.0" prefWidth="475.0" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                <PasswordField fx:id="pwd" maxHeight="40.0" maxWidth="475.0" minHeight="40.0" minWidth="475.0" onKeyReleased="#set_r_enable" prefHeight="40.0" prefWidth="475.0" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+                <Button fx:id="r" maxHeight="45.0" maxWidth="250.0" minHeight="45.0" minWidth="250.0" mnemonicParsing="false" onMouseClicked="#btn_r" prefHeight="45.0" prefWidth="250.0" text="註冊" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+                    <effect>
+                        <Reflection fraction="0.8" topOffset="1.0" />
+                    </effect>
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="c" maxHeight="45.0" maxWidth="250.0" minHeight="45.0" minWidth="250.0" mnemonicParsing="false" onMouseClicked="#btn_cancel" prefHeight="45.0" prefWidth="250.0" text="取消" GridPane.halignment="LEFT" GridPane.rowIndex="11">
+                    <effect>
+                        <Reflection fraction="0.8" topOffset="1.0" />
+                    </effect>
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+                <Separator prefWidth="200.0" GridPane.rowIndex="2" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="10" />
+            </children>
+            <effect>
+                <Reflection fraction="0.25" topOpacity="0.4" />
+            </effect>
+        </GridPane>
+    </children>
+</AnchorPane>

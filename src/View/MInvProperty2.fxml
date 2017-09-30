@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="IAP" maxHeight="900.0" maxWidth="1200.0" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MInvProperty2Controller">
+    <stylesheets>
+        <URL value="@../Style/submenus.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="15.0" text="MilesStone, Ltd." textFill="#5a5959"/>
+        <Label id="title" layoutX="14.0" layoutY="62.0" text="HR Management System" textFill="#5a5959" />
+
+        <GridPane layoutX="626.0" layoutY="17.0">
+            <children>
+                <Label text="員工姓名" />
+                <Label text="清冊編號" GridPane.rowIndex="2" />
+                <TextField fx:id="name" maxHeight="35.0" maxWidth="180.0" minHeight="35.0" minWidth="180.0" prefHeight="35.0" prefWidth="180.0" GridPane.columnIndex="2" />
+                <TextField fx:id="id" maxHeight="35.0" maxWidth="180.0" minHeight="35.0" minWidth="180.0" prefHeight="35.0" prefWidth="180.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>       
+        <GridPane layoutX="1036.0" layoutY="17.0" maxHeight="90.0" maxWidth="150.0" minHeight="90.0" minWidth="150.0" prefHeight="90.0" prefWidth="150.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="90.0" prefHeight="90.0" valignment="CENTER" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button fx:id="search" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onMouseClicked="#btn_search" prefHeight="40.0" prefWidth="150.0" text="1. 搜尋">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </GridPane>
+        <GridPane layoutX="45.0" layoutY="121.0">
+            <children>
+                <Label text="財產名稱" GridPane.columnIndex="1" />
+                <Label text="數量" GridPane.columnIndex="3" />
+                <Label text="發給日期" GridPane.columnIndex="5" />
+                <Label text="歸還日期" GridPane.columnIndex="11" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="20" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="18" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="16" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="14" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="12" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                <Label text="/" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="20" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="18" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="16" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="14" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                <Label text="/" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="6" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="4" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="2" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="20" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="18" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="16" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="14" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="12" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="10" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="8" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="6" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="4" />
+                <Label text="/" GridPane.columnIndex="12" GridPane.rowIndex="2" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="20" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="18" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="16" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="14" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="12" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="10" />
+                <Label text="/" GridPane.columnIndex="14" GridPane.rowIndex="8" />
+                <Label text="1" GridPane.rowIndex="2" />
+                <Label text="10" GridPane.rowIndex="20" />
+                <Label text="9" GridPane.rowIndex="18" />
+                <Label text="8" GridPane.rowIndex="16" />
+                <Label text="7" GridPane.rowIndex="14" />
+                <Label text="6" GridPane.rowIndex="12" />
+                <Label text="5" GridPane.rowIndex="10" />
+                <Label text="4" GridPane.rowIndex="8" />
+                <Label text="3" GridPane.rowIndex="6" />
+                <Label text="2" GridPane.rowIndex="4" />
+                <ComboBox fx:id="p1" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="a1" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set2" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <TextField fx:id="sy1" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                <TextField fx:id="sm1" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                <TextField fx:id="sd1" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                <TextField fx:id="ey1" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="2" />
+                <TextField fx:id="em1" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="2" />
+                <TextField fx:id="ed1" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="2" />
+                <ComboBox fx:id="p2" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="a2" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set3" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <TextField fx:id="sy2" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                <TextField fx:id="sm2" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                <TextField fx:id="sd2" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                <TextField fx:id="ey2" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="4" />
+                <TextField fx:id="em2" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="4" />
+                <TextField fx:id="ed2" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="4" />
+                <ComboBox fx:id="p3" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <TextField fx:id="a3" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set4" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                <TextField fx:id="sy3" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                <TextField fx:id="sm3" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                <TextField fx:id="sd3" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+                <TextField fx:id="ey3" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="6" />
+                <TextField fx:id="em3" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="6" />
+                <TextField fx:id="ed3" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="6" />
+                <ComboBox fx:id="p4" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <TextField fx:id="a4" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set5" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                <TextField fx:id="sy4" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                <TextField fx:id="sm4" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                <TextField fx:id="sd4" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+                <TextField fx:id="ey4" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="8" />
+                <TextField fx:id="em4" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="8" />
+                <TextField fx:id="ed4" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="8" />
+                <ComboBox fx:id="p5" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                <TextField fx:id="a5" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set6" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                <TextField fx:id="sy5" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                <TextField fx:id="sm5" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+                <TextField fx:id="sd5" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+                <TextField fx:id="ey5" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="10" />
+                <TextField fx:id="em5" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="10" />
+                <TextField fx:id="ed5" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="10" />  
+                <ComboBox fx:id="p6" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                <TextField fx:id="a6" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set7" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                <TextField fx:id="sy6" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="12" />
+                <TextField fx:id="sm6" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+                <TextField fx:id="sd6" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="12" />
+                <TextField fx:id="ey6" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="12" />
+                <TextField fx:id="em6" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="12" />
+                <TextField fx:id="ed6" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="12" />
+                <ComboBox fx:id="p7" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                <TextField fx:id="a7" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set8" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+                <TextField fx:id="sy7" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="14" />
+                <TextField fx:id="sm7" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="14" />
+                <TextField fx:id="sd7" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="14" />
+                <TextField fx:id="ey7" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="14" />
+                <TextField fx:id="em7" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="14" />
+                <TextField fx:id="ed7" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="14" />
+                <ComboBox fx:id="p8" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                <TextField fx:id="a8" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set9" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="16" />
+                <TextField fx:id="sy8" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="16" />
+                <TextField fx:id="sm8" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="16" />
+                <TextField fx:id="sd8" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="16" />
+                <TextField fx:id="ey8" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="16" />
+                <TextField fx:id="em8" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="16" />
+                <TextField fx:id="ed8" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="16" />
+                <ComboBox fx:id="p9" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                <TextField fx:id="a9" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" onKeyReleased="#set10" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="18" />
+                <TextField fx:id="sy9" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="18" />
+                <TextField fx:id="sm9" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="18" />
+                <TextField fx:id="sd9" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="18" />
+                <TextField fx:id="ey9" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="18" />
+                <TextField fx:id="em9" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="18" />
+                <TextField fx:id="ed9" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="18" />
+                <ComboBox fx:id="p10" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+                <TextField fx:id="a10" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" prefHeight="40.0" prefWidth="70.0" GridPane.columnIndex="3" GridPane.rowIndex="20" />
+                <TextField fx:id="sy10" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="20" />
+                <TextField fx:id="sm10" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="20" />
+                <TextField fx:id="sd10" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="9" GridPane.rowIndex="20" />
+                <TextField fx:id="ey10" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="11" GridPane.rowIndex="20" />
+                <TextField fx:id="em10" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="13" GridPane.rowIndex="20" />
+                <TextField fx:id="ed10" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="15" GridPane.rowIndex="20" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="14" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="15" GridPane.rowIndex="1" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="13" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="14" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="16" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="17" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="18" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="19" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="20" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="4" GridPane.rowIndex="15" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="5" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="6" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="7" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="9" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="10" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="11" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="12" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="14" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="16" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="15" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="18" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="19" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="20" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="13" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="10" GridPane.rowIndex="17" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="12" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="13" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="14" GridPane.rowIndex="21" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="15" GridPane.rowIndex="21" /> 
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="45.0" layoutY="801.0" maxHeight="50.0" maxWidth="1110.0" minHeight="50.0" minWidth="1110.0" prefHeight="50.0" prefWidth="1110.0">
+            <children>
+                <Button fx:id="check" maxHeight="40.0" maxWidth="310.0" minHeight="40.0" minWidth="310.0" mnemonicParsing="false" onMouseClicked="#btn_checkdata" prefHeight="40.0" prefWidth="310.0" text="2. 確認資料">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <Button fx:id="submit" layoutX="1056.0" layoutY="847.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onMouseClicked="#submit" prefHeight="40.0" prefWidth="130.0" text="3. 送出">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="back" layoutX="14.0" layoutY="847.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="40.0" prefWidth="130.0" text="返回上一層">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

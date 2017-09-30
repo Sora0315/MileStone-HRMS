@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="SAP" maxHeight="900.0" maxWidth="1200.0" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MSalaryAdj2Controller">
+    <stylesheets>
+        <URL value="@../Style/submenus.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="14.0" text="MilesStone, Ltd." textFill="#5a5959"/>
+        <Label id="title" layoutX="14.0" layoutY="61.0" text="HR Management System" textFill="#5a5959" />
+        <GridPane layoutX="38.0" layoutY="95.0">
+            <children>
+                <Label text="員工姓名" GridPane.rowIndex="4" />
+                <Label text="薪資調整紀錄" GridPane.columnIndex="7" GridPane.halignment="RIGHT" />
+                <Label text="員工編號" GridPane.rowIndex="2" />
+                <Label text="年" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <Label text="月" GridPane.columnIndex="6" GridPane.rowIndex="4" />            
+                <TextField fx:id="id" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" onKeyReleased="#set_id" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                <TextField fx:id="name" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" onKeyReleased="#set_id" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+                <TextField fx:id="sy" maxHeight="40.0" maxWidth="160.0" minHeight="40.0" minWidth="160.0" prefHeight="40.0" prefWidth="160.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <TextField fx:id="sm" maxHeight="40.0" maxWidth="160.0" minHeight="40.0" minWidth="160.0" prefHeight="40.0" prefWidth="160.0" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                <Button fx:id="search" maxHeight="40.0" maxWidth="220.0" minHeight="40.0" minWidth="220.0" mnemonicParsing="false" onMouseClicked="#btn_search" prefHeight="40.0" prefWidth="220.0" text="1. 搜尋" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+                <Separator prefWidth="200.0" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="180.0" minWidth="180.0" prefWidth="180.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="180.0" prefWidth="180.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="230.0" minWidth="230.0" prefWidth="230.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="38.0" layoutY="305.0">
+            <children>
+                <Label text="薪資調整生效日期" GridPane.columnIndex="1" />
+                <Label text="/" GridPane.columnIndex="6" />
+                <Label text="/" GridPane.columnIndex="4" />
+                <TextField fx:id="ay" maxHeight="40.0" maxWidth="120.0" minHeight="40.0" minWidth="120.0" prefHeight="40.0" prefWidth="120.0" GridPane.columnIndex="3" />
+                <TextField fx:id="am" maxHeight="40.0" maxWidth="120.0" minHeight="40.0" minWidth="120.0" prefHeight="40.0" prefWidth="120.0" GridPane.columnIndex="5" />
+                <TextField fx:id="ad" maxHeight="40.0" maxWidth="120.0" minHeight="40.0" minWidth="120.0" prefHeight="40.0" prefWidth="120.0" GridPane.columnIndex="7" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="430.0" minWidth="430.0" prefWidth="430.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="24.0" layoutY="615.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="220.0" prefWidth="220.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="230.0" prefWidth="230.0" />
+            </columnConstraints>
+        </GridPane>
+        <GridPane layoutX="38.0" layoutY="365.0">
+            <children>
+                <Label text="本薪" GridPane.rowIndex="2" />
+                <Label text="調整前" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                <Label text="調整後" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                <TextField fx:id="fbasepay" maxHeight="40.0" maxWidth="435.0" minHeight="40.0" minWidth="435.0" prefHeight="40.0" prefWidth="435.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="abasepay" maxHeight="40.0" maxWidth="435.0" minHeight="40.0" minWidth="435.0" prefHeight="40.0" prefWidth="435.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="460.0" minWidth="460.0" prefWidth="460.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="460.0" minWidth="460.0" prefWidth="460.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="38.0" layoutY="485.0">
+            <children>
+                <Label text="津貼" />
+                <Label text="1" GridPane.columnIndex="2" />
+                <Label text="3" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Label text="2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label text="\$" GridPane.columnIndex="4" />
+                <Label text="\$" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <Label text="\$" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <Label text="1" GridPane.columnIndex="7" />
+                <Label text="2" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                <Label text="3" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                <Label text="\$" GridPane.columnIndex="9" />
+                <Label text="\$" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                <Label text="\$" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                <ComboBox fx:id="fsname1" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="3" />
+                <TextField fx:id="fspay1" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" onKeyReleased="#setfsname2" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="5" />
+                <ComboBox fx:id="asname1" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="8" />
+                <TextField fx:id="aspay1" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" onKeyReleased="#setasname2" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="10" />
+                <ComboBox fx:id="fsname2" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <TextField fx:id="fspay2" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" onKeyReleased="#setfsname3" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                <ComboBox fx:id="asname2" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                <TextField fx:id="aspay2" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" onKeyReleased="#setasname3" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+                <ComboBox fx:id="fsname3" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <TextField fx:id="fspay3" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                <ComboBox fx:id="asname3" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                <TextField fx:id="aspay3" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+                <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0" GridPane.columnIndex="6" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="38.0" layoutY="665.0">
+            <children>
+                <Label text="合計" />
+                <TextField fx:id="ftotal" maxHeight="40.0" maxWidth="435.0" minHeight="40.0" minWidth="435.0" prefHeight="40.0" prefWidth="435.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                <TextField fx:id="atotal" maxHeight="40.0" maxWidth="435.0" minHeight="40.0" minWidth="435.0" prefHeight="40.0" prefWidth="435.0" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="460.0" minWidth="460.0" prefWidth="460.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="460.0" minWidth="460.0" prefWidth="460.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="38.0" layoutY="725.0">
+            <children>
+                <Label text="調整差額" />
+                <TextField fx:id="diff" maxHeight="40.0" maxWidth="435.0" minHeight="40.0" minWidth="925.0" prefHeight="40.0" prefWidth="435.0" GridPane.columnIndex="1" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="970.0" minWidth="970.0" prefWidth="970.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="38.0" layoutY="795.0">
+            <children>
+                <Button fx:id="check" maxHeight="40.0" maxWidth="310.0" minHeight="40.0" minWidth="310.0" mnemonicParsing="false" onMouseClicked="#btn_checkdata" prefHeight="40.0" prefWidth="310.0" text="2. 確認資料">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1120.0" minWidth="1120.0" prefWidth="1120.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <Button fx:id="export" layoutX="906.0" layoutY="846.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onMouseClicked="#exportexcel" prefHeight="40.0" prefWidth="130.0" text="匯出Excel">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="submit" layoutX="1056.0" layoutY="846.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onMouseClicked="#btn_submit" prefHeight="40.0" prefWidth="130.0" text="送出">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="back" layoutX="14.0" layoutY="846.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="40.0" prefWidth="130.0" text="返回上一層">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

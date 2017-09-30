@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="EAP" maxHeight="900.0" maxWidth="1200.0" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ELeaveController">
+    <stylesheets>
+        <URL value="@../Style/emp.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="61.0" text="HR Management System" textFill="#5a5959" />
+        <Label id="title" layoutX="14.0" layoutY="14.0" text="MilesStone, Ltd." textFill="#5a5959">
+            <effect>
+                <InnerShadow color="#e7e7e7b2" />
+            </effect>
+        </Label>
+        <GridPane layoutX="65.0" layoutY="200.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1070.0" minWidth="1070.0" prefWidth="1070.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="180.0" minHeight="180.0" prefHeight="180.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="-本年度請假概況-" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="3" />
+                <TableView fx:id="lo" maxHeight="180.0" maxWidth="1070.0" minHeight="180.0" minWidth="1070.0" prefHeight="180.0" prefWidth="1070.0" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <GridPane layoutX="65.0" layoutY="450.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="800.0" minWidth="800.0" prefWidth="800.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="選擇假別" />
+                <Label text="補充事由" GridPane.rowIndex="2" />
+                <ComboBox fx:id="choose" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" onAction="#set_field_enable" prefHeight="40.0" prefWidth="550.0" GridPane.columnIndex="2" />
+                <TextField fx:id="cause" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" prefHeight="40.0" prefWidth="550.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <GridPane layoutX="65.0" layoutY="590.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="年" GridPane.columnIndex="3" />
+                <Label text="分" GridPane.columnIndex="11" />
+                <Label text="時" GridPane.columnIndex="9" />
+                <Label text="日" GridPane.columnIndex="7" />
+                <Label text="月" GridPane.columnIndex="5" />
+                <Label text="年" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <Label text="月" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                <Label text="日" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                <Label text="時" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                <Label text="分" GridPane.columnIndex="11" GridPane.rowIndex="4" />
+                <Label text="開始日期與時間" />
+                <Label text="終止日期與時間" GridPane.rowIndex="4" />
+                <Label text="合計天數" GridPane.rowIndex="2" />
+                <Label text="日" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Label text="時" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="5" />
+                <TextField fx:id="sy" GridPane.columnIndex="2" />
+                <TextField fx:id="sm" GridPane.columnIndex="4" />
+                <TextField fx:id="sd" GridPane.columnIndex="6" />
+                <TextField fx:id="sh" GridPane.columnIndex="8" />
+                <TextField fx:id="smin" GridPane.columnIndex="10" />
+                <TextField fx:id="ey" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <TextField fx:id="em" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <TextField fx:id="ed" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                <TextField fx:id="eh" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                <TextField fx:id="emin" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+                <TextField fx:id="days" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="hours" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <Button fx:id="cal" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#setEndTime" prefHeight="40.0" prefWidth="100.0" text="計算" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </GridPane>
+        <GridPane layoutX="65.0" layoutY="120.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="500.0" minWidth="500.0" prefWidth="500.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label id="red" text="本年度特休假剩餘" />
+                <Label id="red" text="日" GridPane.columnIndex="3" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <Label id="red" fx:id="l" text="  " GridPane.columnIndex="2" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <Label id="red" text="時" GridPane.columnIndex="5" />
+                <Label id="red" fx:id="lh" text="  " GridPane.columnIndex="4" />
+            <Label id="red" text="(特休假計算採周年制)" GridPane.columnIndex="6" />
+            </children>
+        </GridPane>
+        <Button fx:id="submit" layoutX="1046.0" layoutY="846.0" maxHeight="40.0" maxWidth="140.0" minHeight="40.0" minWidth="140.0" mnemonicParsing="false" onMouseClicked="#btn_submit" prefHeight="40.0" prefWidth="140.0" text="送出">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="back" layoutX="14.0" layoutY="846.0" maxHeight="40.0" maxWidth="140.0" minHeight="40.0" minWidth="140.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="40.0" prefWidth="140.0" text="回選單">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

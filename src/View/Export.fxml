@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="AP" maxHeight="900.0" maxWidth="1200.0" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ExportController">
+    <stylesheets>
+        <URL value="@../Style/submenus.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="61.0" text="HR Management System" textFill="#5a5959" />
+        <Label id="title" layoutX="14.0" layoutY="14.0" text="MilesStone, Ltd." textFill="#5a5959">
+            <effect>
+                <InnerShadow color="#e7e7e7b2" />
+            </effect>
+        </Label>
+        <GridPane layoutX="205.0" layoutY="240.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="790.0" minWidth="790.0" prefWidth="790.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label id="red" text="! 注意 ! 匯出文件必須先下載範本，並創設欲放置匯出文件的位置。" />
+                <Label id="red" text="未下載範本或設置位置則無法匯出文件！" GridPane.rowIndex="1" />
+            </children>
+        </GridPane>
+        <GridPane layoutX="205.0" layoutY="370.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="選擇磁碟" GridPane.columnIndex="2" />
+                <Label text="創設資料夾名稱" GridPane.columnIndex="4" />
+                <Label text="空白範本位置" GridPane.rowIndex="2" />
+                <Label text="匯出文件位置" GridPane.rowIndex="4" />
+                <ComboBox fx:id="drive1" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <ComboBox fx:id="drive2" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <TextField fx:id="dirname1" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <TextField fx:id="dirname2" onKeyReleased="#enable_setting" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            </children>
+        </GridPane>
+        <GridPane layoutX="205.0" layoutY="610.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="395.0" minWidth="395.0" prefWidth="395.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="395.0" minWidth="395.0" prefWidth="395.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button fx:id="set" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onMouseClicked="#btn_setting" prefHeight="40.0" prefWidth="150.0" text="1. 設置完成">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="download" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" onMouseClicked="#btn_download" prefHeight="40.0" prefWidth="150.0" text="2.下載檔案" GridPane.columnIndex="1">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </GridPane>
+        <Button fx:id="back" layoutX="14.0" layoutY="846.0" maxHeight="40.0" maxWidth="140.0" minHeight="40.0" minWidth="140.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="40.0" prefWidth="140.0" text="返回選單">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

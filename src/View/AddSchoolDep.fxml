@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="SubAP" maxHeight="700.0" maxWidth="1000.0" minHeight="700.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddSchoolDepController">
+    <stylesheets>
+        <URL value="@../Style/subpreparation.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="61.0" text="HR Management System" textFill="#5a5959" />
+        <Label id="title" layoutX="14.0" layoutY="14.0" text="MilesStone, Ltd." textFill="#5a5959">
+            <effect>
+                <InnerShadow color="#e7e7e7b2" />
+            </effect>
+        </Label>
+        <GridPane layoutX="215.0" layoutY="205.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="15.0" minWidth="15.0" prefWidth="15.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="15.0" minWidth="15.0" prefWidth="15.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="55.0" minHeight="55.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="55.0" minHeight="55.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="55.0" minHeight="55.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="55.0" minHeight="55.0" prefHeight="55.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="學校名稱" GridPane.halignment="CENTER" />
+                <Label text="資料庫編碼" GridPane.columnIndex="2" />
+                <Label text="科/系/所名稱" GridPane.rowIndex="4" />
+                <Label text="資料庫編碼" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Separator prefWidth="200.0" GridPane.rowIndex="3" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <Separator prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />               
+                <TextField fx:id="schid" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="schname" maxWidth="220.0" minWidth="220.0" prefWidth="220.0" GridPane.rowIndex="2" />
+                <Button fx:id="set1" maxHeight="40.0" maxWidth="180.0" minHeight="40.0" minWidth="180.0" mnemonicParsing="false" onMouseClicked="#set_schoolid" prefHeight="40.0" prefWidth="180.0" text="設定完成" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="depid" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <TextField fx:id="depname" maxWidth="220.0" minWidth="220.0" prefWidth="220.0" GridPane.rowIndex="6" />
+                <Button fx:id="set2" maxHeight="40.0" maxWidth="180.0" minHeight="40.0" minWidth="180.0" mnemonicParsing="false" onMouseClicked="#set_depid" prefHeight="40.0" prefWidth="180.0" text="設定完成" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </GridPane>
+        <Button fx:id="submit" layoutX="846.0" layoutY="646.0" maxHeight="40.0" maxWidth="140.0" minHeight="40.0" minWidth="140.0" mnemonicParsing="false" onMouseClicked="#btn_submit" prefHeight="40.0" prefWidth="140.0" text="送出">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="back" layoutX="14.0" layoutY="646.0" maxHeight="40.0" maxWidth="140.0" minHeight="40.0" minWidth="140.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="40.0" prefWidth="140.0" text="返回選單">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

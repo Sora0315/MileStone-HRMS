@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="SAP" maxHeight="900.0" maxWidth="1200.0" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MInvPropertyController">
+    <stylesheets>
+        <URL value="@../Style/submenus.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="61.0" text="HR Management System" textFill="#5a5959" />
+        <Label id="title" layoutX="14.0" layoutY="14.0" text="MilesStone, Ltd." textFill="#5a5959" />
+        <GridPane layoutX="740.0" layoutY="36.0">
+            <children>
+                <Label text="員工姓名" />
+                <TextField fx:id="name" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" onKeyReleased="#set_searchenable" prefHeight="40.0" prefWidth="240.0" GridPane.columnIndex="2" />
+                <Button fx:id="search" maxHeight="40.0" maxWidth="240.0" minHeight="40.0" minWidth="240.0" mnemonicParsing="false" onMouseClicked="#btn_search" prefHeight="40.0" prefWidth="240.0" text="搜尋" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <TableView id="table-cell" fx:id="salary" layoutX="50.0" layoutY="160.0" maxHeight="620.0" maxWidth="1100.0" minHeight="620.0" minWidth="1100.0" prefHeight="620.0" prefWidth="1100.0" />
+        <Button fx:id="modify" layoutX="1056.0" layoutY="846.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onMouseClicked="#btn_modify" prefHeight="40.0" prefWidth="130.0" text="變更資料">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="back" layoutX="14.0" layoutY="846.0" maxHeight="40.0" maxWidth="130.0" minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="40.0" prefWidth="130.0" text="返回選單">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

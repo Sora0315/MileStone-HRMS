@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="EAP" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EPreOvertimeController">
+    <stylesheets>
+        <URL value="@../Style/emp.css" />
+    </stylesheets>
+   <children>
+      <GridPane layoutX="150.0" layoutY="130.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="500.0" minWidth="500.0" prefWidth="500.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label id="red" text="!注意!  本公司採加班許可制" GridPane.halignment="CENTER" />
+            <Label id="red" text="依據本公司管理規章，請務必取得主管許可" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Separator prefWidth="200.0" GridPane.rowIndex="2" />
+            <Label text="選擇核准主管：" GridPane.rowIndex="3" />
+            <ComboBox fx:id="appr" maxHeight="40.0" maxWidth="400.0" minHeight="40.0" minWidth="400.0" onAction="#set_submitenable" prefHeight="40.0" prefWidth="400.0" GridPane.rowIndex="5" />
+            <Button fx:id="submit" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#btn_submit" prefHeight="40.0" prefWidth="100.0" text="確認" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+            </Button>
+            <Separator prefWidth="200.0" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Label id="title" layoutX="14.0" layoutY="14.0" text="MilesStone, Ltd." textFill="#5a5959">
+         <effect>
+            <InnerShadow color="#e7e7e7b2" />
+         </effect>
+      </Label>
+      <Label id="title" layoutX="14.0" layoutY="61.0" text="HR Management System" textFill="#5a5959" />
+      <Button fx:id="back" layoutX="14.0" layoutY="546.0" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="40.0" prefWidth="100.0" text="回主選單">
+         <font>
+            <Font name="Microsoft JhengHei" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,69 @@
+.mainFxmlClass {
+    
+}
+
+.root{
+    -fx-background-image: url("/Image/backgroundmenu.jpg") ;
+}
+
+#title {
+    -fx-font-size: 30px;
+    -fx-font-family: "Arial Black"; 
+    -fx-fill: #d6d4d4;
+    -fx-text-fill: #bbb9b9;
+    -fx-effect: innershadow( three-pass-box , rgba(231,231,231,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+#red {
+    -fx-font-family: "Microsoft JhengHei";
+    -fx-font-size: 24px;
+    -fx-text-fill: #ff0000;
+/*    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );*/
+}
+
+#black {
+    -fx-font-family: "Microsoft JhengHei";
+    -fx-font-size: 24px;
+    -fx-text-fill: #ff0000;
+/*    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );*/
+}
+
+#exit{
+    -fx-background-color: #c3c4c4,
+        linear-gradient(#d6d6d6 50%, white 100%),
+        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+
+#exit:hover{
+    -fx-background-color: linear-gradient(#f5872c, #ffd1ac);
+}
+
+#exit:focused{
+    -fx-background-color: linear-gradient(#f5872c, #ffd1ac);
+}
+
+.button {
+    -fx-background-color: 
+        rgba(0,0,0,0.08),
+        linear-gradient(#ffce90, #ffce90),
+        linear-gradient(#fff2e1 0%,#ffe8c7 10%, #ffa411 50%, #ffa411 50%, #ffce90 100%);
+    -fx-background-radius:10;
+    -fx-background-insets:3;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: #242d35;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+    -fx-font-family:"Microsoft JhengHei";
+    -fx-font-size:18px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#f5872c, #ffd1ac);
+}
+
+.button:focused{
+    -fx-background-color: linear-gradient(#f5872c, #ffd1ac);
+}

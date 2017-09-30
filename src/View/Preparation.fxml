@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="PmenuAP" maxHeight="900.0" maxWidth="1200.0" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PreparationController">
+    <stylesheets>
+        <URL value="@../Style/menu.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="61.0" text="HR Management System" textFill="#ffa411"/>
+        <Label id="title" layoutX="14.0" layoutY="14.0" text="MileStone, Ltd." textFill="#ffa411"/>
+        <GridPane layoutX="389.0" layoutY="170.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button fx:id="school" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_SchDep" prefHeight="50.0" prefWidth="320.0" text="新增畢業學校" />
+                <Button fx:id="lo" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_LO" prefHeight="50.0" prefWidth="320.0" text="新增出缺勤項目" GridPane.rowIndex="2" />
+                <Button fx:id="post" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_Post" prefHeight="50.0" prefWidth="320.0" text="新增職務" GridPane.rowIndex="4" />
+                <Button fx:id="status" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_Activity" prefHeight="50.0" prefWidth="320.0" text="新增服務狀態" GridPane.rowIndex="6" />
+                <Button fx:id="sdytype" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_sdy" prefHeight="50.0" prefWidth="320.0" text="新增津貼類型" GridPane.rowIndex="8" />
+                <Button fx:id="wkexp" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_WkExp" prefHeight="50.0" prefWidth="320.0" text="新增工作經驗項目" GridPane.rowIndex="10" />   
+                <Button fx:id="dep" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_SchDep" prefHeight="50.0" prefWidth="320.0" text="新增畢業科系所" GridPane.columnIndex="2" />   
+                <Button fx:id="blood" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_BloodType" prefHeight="50.0" prefWidth="320.0" text="新增血型" GridPane.columnIndex="2" GridPane.rowIndex="2" />  
+                <Button fx:id="property" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_Property" prefHeight="50.0" prefWidth="320.0" text="新增公有財產資料" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Button fx:id="eval" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_Rating" prefHeight="50.0" prefWidth="320.0" text="新增考評等級" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <Button fx:id="bonustype" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_Bonus" prefHeight="50.0" prefWidth="320.0" text="新增獎金類型" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <Button fx:id="spec" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" mnemonicParsing="false" onMouseClicked="#btn_Speciality" prefHeight="50.0" prefWidth="320.0" text="新增專長項目" GridPane.columnIndex="2" GridPane.rowIndex="10" />  
+            </children>
+        </GridPane>
+        <Button fx:id="back" id="exit" layoutX="14.0" layoutY="851.0" maxHeight="35.0" maxWidth="170.0" minHeight="35.0" minWidth="170.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="35.0" prefWidth="170.0" text="返回上層選單" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="EAP" maxHeight="900.0" maxWidth="1300.0" minHeight="900.0" minWidth="1300.0" prefHeight="900.0" prefWidth="1300.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ESalaryController">
+    <stylesheets>
+        <URL value="@../Style/emp.css" />
+    </stylesheets>
+    <children>
+        <Label id="title" layoutX="14.0" layoutY="14.0" text="MilesStone, Ltd." textFill="#5a5959"/>
+        <Label id="title" layoutX="14.0" layoutY="61.0" text="HR Management System" textFill="#5a5959" />
+        <GridPane layoutX="726.0" layoutY="33.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="輸入查詢年度：" GridPane.halignment="RIGHT" />
+                <Label text="年" GridPane.columnIndex="3" />
+                <TextField fx:id="year" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" onKeyReleased="#btn_setsearchenable" prefHeight="40.0" prefWidth="150.0" GridPane.columnIndex="2" />
+                <Button fx:id="search" maxHeight="40.0" maxWidth="140.0" minHeight="40.0" minWidth="140.0" mnemonicParsing="false" onMouseClicked="#btn_search" prefHeight="40.0" prefWidth="140.0" text="查詢" GridPane.columnIndex="5">
+                    <font>
+                        <Font name="Microsoft JhengHei" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </GridPane>
+        <GridPane layoutX="35.0" layoutY="105.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1200.0" minWidth="1230.0" prefWidth="1200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="300.0" minHeight="300.0" prefHeight="300.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Separator prefWidth="200.0" GridPane.rowIndex="3" />
+                <Label id="red" fx:id="label" text="   " />
+                <TableView fx:id="salary" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <GridPane layoutX="35.0" layoutY="465.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="600.0" minWidth="600.0" prefWidth="600.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="600.0" minWidth="600.0" prefWidth="600.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="330.0" minHeight="330.0" prefHeight="330.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TableView fx:id="sdetail" maxHeight="330.0" maxWidth="600.0" minHeight="330.0" minWidth="600.0" prefHeight="330.0" prefWidth="600.0" GridPane.rowIndex="2" />
+                <TableView fx:id="bdetail" maxHeight="330.0" maxWidth="600.0" minHeight="330.0" minWidth="600.0" prefHeight="330.0" prefWidth="600.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label fx:id="label_s" text="  " />
+                <Label fx:id="label_b" text="  " GridPane.columnIndex="2" />
+            </children>
+        </GridPane>
+        <Button fx:id="back" layoutX="14.0" layoutY="846.0" maxHeight="40.0" maxWidth="140.0" minHeight="40.0" minWidth="140.0" mnemonicParsing="false" onMouseClicked="#btn_back" prefHeight="40.0" prefWidth="140.0" text="回選單">
+            <font>
+                <Font name="Microsoft JhengHei" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
