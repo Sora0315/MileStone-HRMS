@@ -44,14 +44,17 @@ public class LOController implements Initializable {
             String ask = "use MileStoneHRMS select l.LO_Name from LO as l where l.LO_Name = ";
             if (SQLTools.ValueGetId(ask, name).isEmpty()) {
                 String sql = "use MileStoneHRMS select cast(substring(l.LO_ID, 3, 7) as int) from LO as l";
-                String num = Integer.toString(SQLTools.id_incre(((int) SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int) SQLTools.sqlQuerySetId(sql))));
                 String id = "LO" + StringVariation.right(("00000" + num), 5);
                 loid.setText(id);
                 submit.setDisable(false);
             } else {
-                NoticeController.noticecontent = "請輸必要資料！";
+                NoticeController.noticecontent = "資料已經存在！";
                 StageControll.open(NoticeController.class, "/View/Notice.fxml");
             }
+        } else {
+            NoticeController.noticecontent = "請輸入必要資料！";
+            StageControll.open(NoticeController.class, "/View/Notice.fxml");
         }
     }
 
@@ -70,9 +73,9 @@ public class LOController implements Initializable {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, loid.getText());
                 pstmt.setString(2, name.getText());
-                SQLTools.emptyslotsetnull(limit, pstmt, 3);
-                SQLTools.emptyslotsetnull(source, pstmt, 4);
-                SQLTools.emptyslotsetnull(memo, pstmt, 3);
+                SQLTools.emptyUnitSetNull(limit, pstmt, 3);
+                SQLTools.emptyUnitSetNull(source, pstmt, 4);
+                SQLTools.emptyUnitSetNull(memo, pstmt, 3);
                 pstmt.execute();
                 AuditLog.Audit("準備程序-異常工時類別", loid, name);
             }

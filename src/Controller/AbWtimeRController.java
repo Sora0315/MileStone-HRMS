@@ -23,21 +23,15 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
- *
  * @author Sora
  */
 public class AbWtimeRController implements Initializable {
 
-    @FXML
-    public AnchorPane AWAP;
-    @FXML
-    public TextField id, name, cause;
-    @FXML
-    public ComboBox lo;
-    @FXML
-    public TextField sy, sm, sd, sh, smin, ey, em, ed, eh, emin, d, h;
-    @FXML
-    public Button back, check, submit;
+    @FXML public AnchorPane AWAP;
+    @FXML public TextField id, name, cause;
+    @FXML public ComboBox lo;
+    @FXML public TextField sy, sm, sd, sh, smin, ey, em, ed, eh, emin, d, h;
+    @FXML public Button back, check, submit;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -47,7 +41,7 @@ public class AbWtimeRController implements Initializable {
         submit.setDisable(true);
         String sql = "use MileStoneHRMS select l.LO_Name from LO as l";
         try {
-            SQLTools.SqlGetItem(sql, lo);
+            SQLTools.comboboxSetItem(sql, lo);
         } catch (Exception e) {
         }
         AutoCompleteComboBox autoCompleteComboBox = new AutoCompleteComboBox(lo);
@@ -115,13 +109,13 @@ public class AbWtimeRController implements Initializable {
             pstmt.setString(1, id.getText());
             pstmt.setString(2, set_loid());
             pstmt.setString(3, StringVariation.datetimecom(sy, sm, sd, sh, smin));
-            SQLTools.emptyslotsetnull(StringVariation.datetimecom(ey, em, ed, eh, emin), pstmt, 4);
+            SQLTools.emptyUnitSetNull(StringVariation.datetimecom(ey, em, ed, eh, emin), pstmt, 4);
             if (d.getText().isEmpty() || h.getText().isEmpty()) {
                 pstmt.setNull(5, java.sql.Types.VARCHAR);
             } else {
-                pstmt.setString(5, d.getText() + " 日 " + h.getText() + "    時");
+                pstmt.setString(5, String.valueOf(Integer.valueOf(d.getText()) * 24 + Integer.valueOf(h.getText())));
             }
-            SQLTools.emptyslotsetnull(cause, pstmt, 6);
+            SQLTools.emptyUnitSetNull(cause, pstmt, 6);
             pstmt.execute();
             AuditLog.Audit("HR/DBA 出勤紀錄登錄", id, lo, StringVariation.datetimecom(sy, sm, sd, sh, smin));
         }

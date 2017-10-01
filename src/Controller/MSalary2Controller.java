@@ -83,8 +83,8 @@ public class MSalary2Controller implements Initializable {
         StageControll.Buttonhandle(search);
         String sql = "use MileStoneHRMS select t.Type_Name from BonusType as t";
         try {
-            SQLTools.SqlGetItem(sql, btype1);
-            SQLTools.SqlGetItem(sql, btype2);
+            SQLTools.comboboxSetItem(sql, btype1);
+            SQLTools.comboboxSetItem(sql, btype2);
         } catch (Exception e) {
         }
     }
@@ -105,7 +105,7 @@ public class MSalary2Controller implements Initializable {
             ComboBox[] clist = {sname1, sname2, sname3};
             search_and_setdata("st.Type_Name", clist, sname);
             for (ComboBox items : clist) {
-                SQLTools.SqlGetItem("use MileStoneHRMS select s.Type_Name from SdyType as s ", items);
+                SQLTools.comboboxSetItem("use MileStoneHRMS select s.Type_Name from SdyType as s ", items);
             }
             TextField[] tlist = {spay1, spay2, spay3};
             search_and_setdata("cast(sd.Subsidy as int)", tlist, spay);
@@ -356,9 +356,9 @@ public class MSalary2Controller implements Initializable {
                 } else {
                     pstmt.setNull(3, java.sql.Types.VARCHAR);
                 }
-                SQLTools.emptyslotsetnull(basepay, pstmt, 4);
-                SQLTools.emptyslotsetnull(lh, pstmt, 5);
-                SQLTools.emptyslotsetnull(total, pstmt, 6);
+                SQLTools.emptyUnitSetNull(basepay, pstmt, 4);
+                SQLTools.emptyUnitSetNull(lh, pstmt, 5);
+                SQLTools.emptyUnitSetNull(total, pstmt, 6);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-修正員工薪資紀錄", name, StringVariation.datecom(py, pm, pd));
             }
@@ -374,7 +374,7 @@ public class MSalary2Controller implements Initializable {
                         pstmt.setString(1, id.getText());
                         pstmt.setString(2, StringVariation.datecom(py, pm, pd));
                         pstmt.setString(3, SQLTools.ValueGetId(ask, clist[i]));
-                        SQLTools.emptyslotsetnull(tlist[i].getText(), pstmt, 4);
+                        SQLTools.emptyUnitSetNull(tlist[i].getText(), pstmt, 4);
                         pstmt.execute();
                         AuditLog.Audit("主管/HR-修正員工薪資紀錄(津貼)", name, StringVariation.datecom(py, pm, pd));
                     }
@@ -389,7 +389,7 @@ public class MSalary2Controller implements Initializable {
                                 pstmt.setString(1, id.getText());
                                 pstmt.setString(2, StringVariation.datecom(py, pm, pd));
                                 pstmt.setString(3, SQLTools.ValueGetId(ask, clist[i]));
-                                SQLTools.emptyslotsetnull(tlist[i].getText(), pstmt, 4);
+                                SQLTools.emptyUnitSetNull(tlist[i].getText(), pstmt, 4);
                                 pstmt.execute();
                             }
                         }
@@ -403,7 +403,7 @@ public class MSalary2Controller implements Initializable {
                                 + " and sd.Subsidy = " + "'" + spay[i] + "'";
                         try (PreparedStatement pstmt = conn.prepareStatement(sql2)) {
                             pstmt.setString(1, SQLTools.ValueGetId(ask, clist[i]));
-                            SQLTools.emptyslotsetnull(tlist[i].getText(), pstmt, 2);
+                            SQLTools.emptyUnitSetNull(tlist[i].getText(), pstmt, 2);
                             pstmt.execute();
                             AuditLog.Audit("主管/HR-修正員工薪資紀錄(津貼)", name, StringVariation.datecom(py, pm, pd));
                         }
@@ -425,7 +425,7 @@ public class MSalary2Controller implements Initializable {
                         pstmt.setString(1, id.getText());
                         pstmt.setString(2, StringVariation.datecom(py, pm, pd));
                         pstmt.setString(3, SQLTools.ValueGetId(ask_b, blist[i]));
-                        SQLTools.emptyslotsetnull(btlist[i].getText(), pstmt, 4);
+                        SQLTools.emptyUnitSetNull(btlist[i].getText(), pstmt, 4);
                         pstmt.execute();
                         AuditLog.Audit("主管/HR-修正員工薪資紀錄(獎金)", name, StringVariation.datecom(py, pm, pd));
                     }
@@ -440,7 +440,7 @@ public class MSalary2Controller implements Initializable {
                                 pstmt.setString(1, id.getText());
                                 pstmt.setString(2, StringVariation.datecom(py, pm, pd));
                                 pstmt.setString(3, SQLTools.ValueGetId(ask_b, blist[i]));
-                                SQLTools.emptyslotsetnull(btlist[i].getText(), pstmt, 4);
+                                SQLTools.emptyUnitSetNull(btlist[i].getText(), pstmt, 4);
                                 pstmt.execute();
                             }
                         }
@@ -455,7 +455,7 @@ public class MSalary2Controller implements Initializable {
 
                         try (PreparedStatement pstmt = conn.prepareStatement(sql2)) {
                             pstmt.setString(1, SQLTools.ValueGetId(ask_b, blist[i]));
-                            SQLTools.emptyslotsetnull(btlist[i].getText(), pstmt, 2);
+                            SQLTools.emptyUnitSetNull(btlist[i].getText(), pstmt, 2);
                             pstmt.execute();
                             AuditLog.Audit("主管/HR-修正員工薪資紀錄(獎金)", name, StringVariation.datecom(py, pm, pd));
                         }
@@ -470,13 +470,13 @@ public class MSalary2Controller implements Initializable {
 
     public void total() {
         int a, b, c, d, e, f, g;
-        a = SQLTools.txtnotemptytoint(basepay);
-        b = SQLTools.txtnotemptytoint(spay1);
-        c = SQLTools.txtnotemptytoint(spay2);
-        d = SQLTools.txtnotemptytoint(spay3);
-        e = SQLTools.txtnotemptytoint(bpay1);
-        g = SQLTools.txtnotemptytoint(bpay2);
-        f = SQLTools.txtnotemptytoint(lh);
+        a = SQLTools.textfieldConvertInt(basepay);
+        b = SQLTools.textfieldConvertInt(spay1);
+        c = SQLTools.textfieldConvertInt(spay2);
+        d = SQLTools.textfieldConvertInt(spay3);
+        e = SQLTools.textfieldConvertInt(bpay1);
+        g = SQLTools.textfieldConvertInt(bpay2);
+        f = SQLTools.textfieldConvertInt(lh);
         total.setText(String.valueOf((a + b + c + d + e + g - f)));
     }
 

@@ -54,7 +54,7 @@ public class MSalaryAdj2Controller implements Initializable {
         StageControll.TextFieldhandle(sm);
         for (ComboBox items : clist) {
             try {
-                SQLTools.SqlGetItem(sql, items);
+                SQLTools.comboboxSetItem(sql, items);
                 StageControll.ComboBoxCtrl(items);
                 items.setEditable(true);
             } catch (Exception e) {
@@ -107,11 +107,11 @@ public class MSalaryAdj2Controller implements Initializable {
             ComboBox[] as = {asname1, asname2, asname3};
             ofround = search_and_setdata(sql_fs, fs, ofsname);
             oaround = search_and_setdata(sql_as, as, oasname);
-            String sql_fspay = "use MileStoneHRMS select  bf.Bef_Subsidy  from BefSdy as bf \n"
+            String sql_fspay = "use MileStoneHRMS select  cast(bf.Bef_Subsidy as int)  from BefSdy as bf \n"
                     + " left outer join SdyType as sd on bf.Type_ID = sd.Type_ID\n"
                     + " where bf.P_ID = " + "'" + id.getText() + "'"
                     + " and year(bf.StartD) = " + "'" + ay.getText() + "'" + " and month(bf.StartD) = " + "'" + am.getText() + "'";
-            String sql_aspay = "use MileStoneHRMS select  af.Aft_Subsidy  from AftSdy as af \n"
+            String sql_aspay = "use MileStoneHRMS select  cast(af.Aft_Subsidy as int)  from AftSdy as af \n"
                     + " left outer join SdyType as sd on af.Type_ID = sd.Type_ID\n"
                     + " where af.P_ID = " + "'" + id.getText() + "'"
                     + " and year(af.StartD) = " + "'" + ay.getText() + "'" + " and month(af.StartD) = " + "'" + am.getText() + "'";
@@ -267,9 +267,9 @@ public class MSalaryAdj2Controller implements Initializable {
         try (Connection conn = SQLTools.MSSQL()) {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, StringVariation.datecom(ay, am, ad));
-                SQLTools.emptyslotsetnull(fbasepay, pstmt, 2);
-                SQLTools.emptyslotsetnull(abasepay, pstmt, 3);
-                SQLTools.emptyslotsetnull(diff, pstmt, 4);
+                SQLTools.emptyUnitSetNull(fbasepay, pstmt, 2);
+                SQLTools.emptyUnitSetNull(abasepay, pstmt, 3);
+                SQLTools.emptyUnitSetNull(diff, pstmt, 4);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-修正員工薪資調整紀錄", name, StringVariation.datecom(ay, am, ad));
             }
@@ -289,7 +289,7 @@ public class MSalaryAdj2Controller implements Initializable {
                         pstmt.setString(1, id.getText());
                         pstmt.setString(2, StringVariation.datecom(ay, am, ad));
                         pstmt.setString(3, SQLTools.ValueGetId(ask, fsname[i].getSelectionModel().getSelectedItem().toString()));
-                        SQLTools.emptyslotsetnull(fspay[i].getText(), pstmt, 4);
+                        SQLTools.emptyUnitSetNull(fspay[i].getText(), pstmt, 4);
                         pstmt.execute();
                     }
                 }
@@ -303,7 +303,7 @@ public class MSalaryAdj2Controller implements Initializable {
                             pstmt.setString(1, id.getText());
                             pstmt.setString(2, StringVariation.datecom(ay, am, ad));
                             pstmt.setString(3, SQLTools.ValueGetId(ask, fsname[i].getSelectionModel().getSelectedItem().toString()));
-                            SQLTools.emptyslotsetnull(fspay[i].getText(), pstmt, 4);
+                            SQLTools.emptyUnitSetNull(fspay[i].getText(), pstmt, 4);
                             pstmt.execute();
                         }
                     } else {
@@ -314,7 +314,7 @@ public class MSalaryAdj2Controller implements Initializable {
                         try (PreparedStatement pstmt = conn.prepareStatement(bef)) {
                             pstmt.setString(1, StringVariation.datecom(ay, am, ad));
                             pstmt.setString(2, SQLTools.ValueGetId(ask, fsname[i].getSelectionModel().getSelectedItem().toString()));
-                            SQLTools.emptyslotsetnull(fspay[i].getText(), pstmt, 3);
+                            SQLTools.emptyUnitSetNull(fspay[i].getText(), pstmt, 3);
                             pstmt.execute();
                         }
                     }
@@ -330,7 +330,7 @@ public class MSalaryAdj2Controller implements Initializable {
                         pstmt.setString(1, id.getText());
                         pstmt.setString(2, StringVariation.datecom(ay, am, ad));
                         pstmt.setString(3, SQLTools.ValueGetId(ask, asname[i].getSelectionModel().getSelectedItem().toString()));
-                        SQLTools.emptyslotsetnull(aspay[i].getText(), pstmt, 4);
+                        SQLTools.emptyUnitSetNull(aspay[i].getText(), pstmt, 4);
                         pstmt.execute();
                     }
                 }
@@ -345,19 +345,18 @@ public class MSalaryAdj2Controller implements Initializable {
                             pstmt.setString(1, id.getText());
                             pstmt.setString(2, StringVariation.datecom(ay, am, ad));
                             pstmt.setString(3, SQLTools.ValueGetId(ask, asname[i].getSelectionModel().getSelectedItem().toString()));
-                            SQLTools.emptyslotsetnull(aspay[i].getText(), pstmt, 4);
+                            SQLTools.emptyUnitSetNull(aspay[i].getText(), pstmt, 4);
                             pstmt.execute();
                         }
                     } else {
                         String aft = "use MileStoneHRMS update AftSdy set StartD = ?, Type_ID = ?, Aft_Subsidy = ? "
                                 + " where P_ID = " + "'" + id.getText() + "' and StartD = " + "'" + otime + "'"
                                 + " and Type_ID = " + "'" + SQLTools.ValueGetId(ask, oasname[i]) + "'";
-                        System.out.println(aft);
 
                         try (PreparedStatement pstmt = conn.prepareStatement(aft)) {
                             pstmt.setString(1, StringVariation.datecom(ay, am, ad));
                             pstmt.setString(2, SQLTools.ValueGetId(ask, asname[i].getSelectionModel().getSelectedItem().toString()));
-                            SQLTools.emptyslotsetnull(aspay[i].getText(), pstmt, 3);
+                            SQLTools.emptyUnitSetNull(aspay[i].getText(), pstmt, 3);
                             pstmt.execute();
                         }
                     }
@@ -369,20 +368,20 @@ public class MSalaryAdj2Controller implements Initializable {
 
     public void ftotal() {
         int a, b, c, d;
-        a = SQLTools.txtnotemptytoint(fbasepay);
-        b = SQLTools.txtnotemptytoint(fspay1);
-        c = SQLTools.txtnotemptytoint(fspay2);
-        d = SQLTools.txtnotemptytoint(fspay3);
+        a = SQLTools.textfieldConvertInt(fbasepay);
+        b = SQLTools.textfieldConvertInt(fspay1);
+        c = SQLTools.textfieldConvertInt(fspay2);
+        d = SQLTools.textfieldConvertInt(fspay3);
         String tal = String.valueOf((a + b + c + d));
         ftotal.setText(tal);
     }
 
     public void atotal() {
         int a, b, c, d;
-        a = SQLTools.txtnotemptytoint(abasepay);
-        b = SQLTools.txtnotemptytoint(aspay1);
-        c = SQLTools.txtnotemptytoint(aspay2);
-        d = SQLTools.txtnotemptytoint(aspay3);
+        a = SQLTools.textfieldConvertInt(abasepay);
+        b = SQLTools.textfieldConvertInt(aspay1);
+        c = SQLTools.textfieldConvertInt(aspay2);
+        d = SQLTools.textfieldConvertInt(aspay3);
         String tal = String.valueOf((a + b + c + d));
         atotal.setText(tal);
     }
@@ -396,7 +395,7 @@ public class MSalaryAdj2Controller implements Initializable {
         String filename = id.getText() + " " + ay.getText() + StringVariation.right(("00" + am.getText()), 2) + "薪資調整通知書-修正.xlsx";
         File outputfile = new File(ExportTools.path2, filename);
         try {
-            XSSFWorkbook workbook = new XSSFWorkbook(ExportTools.path1 + "/薪資調整通知書空白範本.xlsx");
+            XSSFWorkbook workbook = new XSSFWorkbook(ExportTools.path1 + "/薪資調整通知書範本.xlsx");
             XSSFSheet sheet = workbook.getSheet("薪資調整通知書");
 
             ExportTools.row(sheet, 3).getCell(2).setCellValue(id.getText());

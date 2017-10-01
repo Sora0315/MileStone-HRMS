@@ -25,17 +25,12 @@ import javafx.scene.layout.AnchorPane;
  */
 public class MPsecPwkexp2Controller implements Initializable {
 
-    @FXML
-    public AnchorPane PAP;
-    @FXML
-    public Label i1, i2, i3;
-    @FXML
-    public ComboBox s1, s2, s3, s4, s5, s6, s7, s8, w1, w2, w3, wp1, wp2, wp3;
-    @FXML
-    public TextField name, sy1, sy2, sy3, sm1, sm2, sm3, ey1, ey2, ey3, em1, em2, em3;
-    @FXML
-    public Button back, search, check, submit;
-
+    @FXML public AnchorPane PAP;
+    @FXML public Label i1, i2, i3;
+    @FXML public ComboBox s1, s2, s3, s4, s5, s6, s7, s8
+            , w1, w2, w3, wp1, wp2, wp3;
+    @FXML public TextField name, sy1, sy2, sy3, sm1, sm2, sm3, ey1, ey2, ey3, em1, em2, em3;
+    @FXML public Button back, search, check, submit;
     public String id;
     public int snum, wnum;
     public String[] os = new String[8];
@@ -77,11 +72,11 @@ public class MPsecPwkexp2Controller implements Initializable {
         try {
             ComboBox[] s = {s1, s2, s3, s4, s5, s6, s7, s8};
             for (ComboBox items : s) {
-                SQLTools.SqlGetItem(specsql, items);
+                SQLTools.comboboxSetItem(specsql, items);
             }
             ComboBox[] w = {w1, w2, w3};
             for (ComboBox items : w) {
-                SQLTools.SqlGetItem(wsql, items);
+                SQLTools.comboboxSetItem(wsql, items);
             }
         } catch (Exception e) {
         }
@@ -93,42 +88,47 @@ public class MPsecPwkexp2Controller implements Initializable {
 
     @FXML
     public void btn_search(MouseEvent event) throws Exception {
-        String specsql = "use MileStoneHRMS select s.Sp_Name from PSpec as p "
-                + " left outer join Speciality as s on s.Sp_ID = p.Sp_ID "
-                + " where p.P_ID = " + "'" + id + "'";
-        ComboBox[] s = {s1, s2, s3, s4, s5, s6, s7, s8};
-        search_and_setdata(specsql, s, os);
-        String wsql = "use MileStoneHRMS select w.Exp_Name from PWkExp as p "
-                + " left outer join WkExperience as w on p.Exp_ID = w.Exp_ID "
-                + " where p.P_ID = " + "'" + id + "'"
-                + " order by p.Exp_Num Asc ";
-        ComboBox[] w = {w1, w2, w3};
-        search_and_setdata(wsql, w, ow);
-        String wpsql = "use MileStoneHRMS select e.ExpPost_Name from PWkExp as p "
-                + " left outer join WkExperience as w on p.Exp_ID = w.Exp_ID "
-                + " left outer join ExpPost as e on e.ExpPost_ID = w.ExpPost_ID "
-                + " where p.P_ID = " + "'" + id + "'"
-                + " order by p.Exp_Num Asc ";
-        ComboBox[] wp = {wp1, wp2, wp3};
-        search_and_setdata(wpsql, wp, owp);
-        String penumsql = "use MileStoneHRMS select p.Exp_Num from PWkExp as p "
-                + " left outer join WkExperience as w on p.Exp_ID = w.Exp_ID "
-                + " where p.P_ID = " + "'" + id + "'"
-                + " order by p.Exp_Num Asc ";
-        Label[] lb = {i1, i2, i3};
-        search_and_setdata(penumsql, lb, penum);
-        search_and_setdata(" year(cast(p.StartD as date)) ", w1, wp1, sy1);
-        search_and_setdata(" month(cast(p.StartD as date)) ", w1, wp1, sm1);
-        search_and_setdata(" year(cast(p.EndD as date)) ", w1, wp1, ey1);
-        search_and_setdata(" month(cast(p.EndD as date)) ", w1, wp1, em1);
-        search_and_setdata(" year(cast(p.StartD as date)) ", w2, wp2, sy2);
-        search_and_setdata(" month(cast(p.StartD as date)) ", w2, wp2, sm2);
-        search_and_setdata(" year(cast(p.EndD as date)) ", w2, wp2, ey2);
-        search_and_setdata(" month(cast(p.EndD as date)) ", w2, wp2, em2);
-        search_and_setdata(" year(cast(p.StartD as date)) ", w3, wp3, sy3);
-        search_and_setdata(" month(cast(p.StartD as date)) ", w3, wp3, sm3);
-        search_and_setdata(" year(cast(p.EndD as date)) ", w3, wp3, ey3);
-        search_and_setdata(" month(cast(p.EndD as date)) ", w3, wp3, em3);
+        if (!name.getText().isEmpty() || name.getText().trim().length() != 0) {
+            String specsql = "use MileStoneHRMS select s.Sp_Name from PSpec as p "
+                    + " left outer join Speciality as s on s.Sp_ID = p.Sp_ID "
+                    + " where p.P_ID = " + "'" + id + "'";
+            ComboBox[] s = {s1, s2, s3, s4, s5, s6, s7, s8};
+            search_and_setdata(specsql, s, os);
+            String wsql = "use MileStoneHRMS select w.Exp_Name from PWkExp as p "
+                    + " left outer join WkExperience as w on p.Exp_ID = w.Exp_ID "
+                    + " where p.P_ID = " + "'" + id + "'"
+                    + " order by p.Exp_Num Asc ";
+            ComboBox[] w = {w1, w2, w3};
+            search_and_setdata(wsql, w, ow);
+            String wpsql = "use MileStoneHRMS select e.ExpPost_Name from PWkExp as p "
+                    + " left outer join WkExperience as w on p.Exp_ID = w.Exp_ID "
+                    + " left outer join ExpPost as e on e.ExpPost_ID = w.ExpPost_ID "
+                    + " where p.P_ID = " + "'" + id + "'"
+                    + " order by p.Exp_Num Asc ";
+            ComboBox[] wp = {wp1, wp2, wp3};
+            search_and_setdata(wpsql, wp, owp);
+            String penumsql = "use MileStoneHRMS select p.Exp_Num from PWkExp as p "
+                    + " left outer join WkExperience as w on p.Exp_ID = w.Exp_ID "
+                    + " where p.P_ID = " + "'" + id + "'"
+                    + " order by p.Exp_Num Asc ";
+            Label[] lb = {i1, i2, i3};
+            search_and_setdata(penumsql, lb, penum);
+            search_and_setdata(" year(cast(p.StartD as date)) ", w1, wp1, sy1);
+            search_and_setdata(" month(cast(p.StartD as date)) ", w1, wp1, sm1);
+            search_and_setdata(" year(cast(p.EndD as date)) ", w1, wp1, ey1);
+            search_and_setdata(" month(cast(p.EndD as date)) ", w1, wp1, em1);
+            search_and_setdata(" year(cast(p.StartD as date)) ", w2, wp2, sy2);
+            search_and_setdata(" month(cast(p.StartD as date)) ", w2, wp2, sm2);
+            search_and_setdata(" year(cast(p.EndD as date)) ", w2, wp2, ey2);
+            search_and_setdata(" month(cast(p.EndD as date)) ", w2, wp2, em2);
+            search_and_setdata(" year(cast(p.StartD as date)) ", w3, wp3, sy3);
+            search_and_setdata(" month(cast(p.StartD as date)) ", w3, wp3, sm3);
+            search_and_setdata(" year(cast(p.EndD as date)) ", w3, wp3, ey3);
+            search_and_setdata(" month(cast(p.EndD as date)) ", w3, wp3, em3);
+        } else {
+            NoticeController.noticecontent = "請輸入姓名！";
+            StageControll.open(NoticeController.class, "/View/Notice.fxml", true);
+        }
     }
 
     public void search_and_setdata(String column, ComboBox w, ComboBox wp, TextField target) throws Exception {
@@ -200,7 +200,7 @@ public class MPsecPwkexp2Controller implements Initializable {
             String sql = " use  MileStoneHRMS select distinct e.ExpPost_Name from WkExperience as w "
                     + " left outer join ExpPost as e on e.ExpPost_ID = w.ExpPost_ID "
                     + " where w.Exp_Name = " + "'" + w.getSelectionModel().getSelectedItem().toString() + "'";
-            SQLTools.SqlGetItem(sql, wp);
+            SQLTools.comboboxSetItem(sql, wp);
             wp.setDisable(false);
         }
     }

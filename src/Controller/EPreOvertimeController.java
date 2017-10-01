@@ -28,7 +28,7 @@ public class EPreOvertimeController implements Initializable {
         submit.setDisable(true);
         try{
             String sql = "use MileStoneHRMS select a.Name from AdminPersonel as a ";
-            SQLTools.SqlGetItem(sql, appr);
+            SQLTools.comboboxSetItem(sql, appr);
         }catch(Exception e){
         }
         appr.setEditable(true);

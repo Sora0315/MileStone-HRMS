@@ -42,7 +42,7 @@ public class AddPostController implements Initializable {
             String ask = "use MileStoneHRMS select p.Post_Name from Position as p where p.Post_Name = ";
             if(SQLTools.ValueGetId(ask, pname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(p.Post_ID, 3, 7) as int) from Position as p ";
-                String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                 String id = "PO" + StringVariation.right(("00000" + num), 5);
                 pid.setText(id);
                 submit.setDisable(false);
@@ -69,7 +69,7 @@ public class AddPostController implements Initializable {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, id.getText());
                 pstmt.setString(2, name.getText());
-                SQLTools.emptyslotsetnull(name2, pstmt, 3);
+                SQLTools.emptyUnitSetNull(name2, pstmt, 3);
                 pstmt.execute();
                 AuditLog.Audit("準備程序-職務", id, name);
             }

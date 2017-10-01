@@ -121,8 +121,8 @@ public class SQLTools {
         }
     }
 
-    //Sql_Get_ID, by using method will  return a int value for column of Table which would be as the ID.
-    public static int Sql_Get_ID(String query) throws Exception {
+    //sqlQuerySetId, by using method will  return a int value for column of Table which would be as the ID.
+    public static int sqlQuerySetId(String query) throws Exception {
         try (Connection conn = MSSQL()) {
             int output;
             try (ResultSet rs = conn.createStatement().executeQuery(query)) {
@@ -136,14 +136,14 @@ public class SQLTools {
     }
 
     //By using this method can draw combobox selected value, and the value will convert as the id put in textfield.
-    public static void Cmb_Tfd_putID(String txt, ComboBox cmb, TextField target) throws Exception {
+    public static void comboboxValueGetIdToTextfield(String txt, ComboBox cmb, TextField target) throws Exception {
         if (cmb.getSelectionModel().getSelectedItem().toString() != null) {
             target.setText(ValueGetId(txt, cmb));
         }
     }
 
     //By using the method can draw value from database and put into combobox as selectable item.
-    public static void SqlGetItem(String txt, ComboBox cmb) throws Exception {
+    public static void comboboxSetItem(String txt, ComboBox cmb) throws Exception {
         try (Connection conn = MSSQL()) {
             ObservableList<String> list;
             try (ResultSet rs = conn.createStatement().executeQuery(txt)) {
@@ -156,7 +156,7 @@ public class SQLTools {
         }
     }
 
-    public static void SqlGetItem_S(String txt, ComboBox cmb) throws Exception {
+    public static void comboboxSetItemSecurityDB(String txt, ComboBox cmb) throws Exception {
         try (Connection conn = MSSQL_S()) {
             ObservableList<String> list;
             try (ResultSet rs = conn.createStatement().executeQuery(txt)) {
@@ -169,12 +169,12 @@ public class SQLTools {
         }
     }
 
-    public static int id_incre(int i) {
+    public static int idAutoIncrease(int i) {
         int out = i+1;
         return out;
     }
 
-    public static int txtnotemptytoint(TextField txt) {
+    public static int textfieldConvertInt(TextField txt) {
         int i;
         if (txt.getText() == null || txt.getText().equalsIgnoreCase("") || txt.getText().isEmpty()) {
             i = 0;
@@ -184,7 +184,7 @@ public class SQLTools {
         return i;
     }
 
-    public static void emptyslotsetnull(TextField txt, PreparedStatement st, int location) throws Exception {
+    public static void emptyUnitSetNull(TextField txt, PreparedStatement st, int location) throws Exception {
         if (txt.getText() == null || txt.getText().equalsIgnoreCase("") || txt.getText().isEmpty()) {
             st.setNull(location, java.sql.Types.VARCHAR);
         } else {
@@ -192,7 +192,7 @@ public class SQLTools {
         }
     }
 
-    public static void emptyslotsetnull(String txt, PreparedStatement st, int location) throws Exception {
+    public static void emptyUnitSetNull(String txt, PreparedStatement st, int location) throws Exception {
         if (txt == null || txt.equalsIgnoreCase("") || txt.isEmpty()) {
             st.setNull(location, java.sql.Types.VARCHAR);
         } else {
@@ -200,7 +200,7 @@ public class SQLTools {
         }
     }
 
-    public static void emptyslotsetnull(ComboBox box, PreparedStatement st, int location) throws Exception {
+    public static void emptyUnitSetNull(ComboBox box, PreparedStatement st, int location) throws Exception {
         if (!box.getSelectionModel().isEmpty()) {
             st.setString(location, box.getSelectionModel().getSelectedItem().toString());
         } else {
@@ -208,7 +208,7 @@ public class SQLTools {
         }
     }
 
-    public static void emptyslotsetnull(ComboBox box, String txt, PreparedStatement st, int location) throws Exception {
+    public static void emptyUnitSetNull(ComboBox box, String txt, PreparedStatement st, int location) throws Exception {
         if (!box.getSelectionModel().isEmpty()) {
             st.setString(location, txt);
         } else {

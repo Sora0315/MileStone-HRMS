@@ -236,7 +236,7 @@ public class MPersonelController implements Initializable {
                         pstmt.setString(1, pid.getText());
                         pstmt.setString(2, SQLTools.ValueGetId(act, status));
                         pstmt.setString(3, StringVariation.datecom(sy, sm, sd));
-                        SQLTools.emptyslotsetnull(StringVariation.datecom(ey, em, ed), pstmt, 4);
+                        SQLTools.emptyUnitSetNull(StringVariation.datecom(ey, em, ed), pstmt, 4);
                         pstmt.execute();
                         AuditLog.Audit("主管/HR-修改員工服務狀態", name, status, StringVariation.datecom(sy, sm, sd));
                     }
@@ -259,7 +259,7 @@ public class MPersonelController implements Initializable {
                         pstmt.setString(1, pid.getText());
                         pstmt.setString(2, SQLTools.ValueGetId(act, status.getSelectionModel().getSelectedItem().toString()));
                         pstmt.setString(3, StringVariation.datecom(sy, sm, sd));
-                        SQLTools.emptyslotsetnull(StringVariation.datecom(ey, em, ed), pstmt, 4);
+                        SQLTools.emptyUnitSetNull(StringVariation.datecom(ey, em, ed), pstmt, 4);
                         pstmt.execute();
                         AuditLog.Audit("主管/HR-修改員工服務狀態", name, status, StringVariation.datecom(sy, sm, sd));
                     }
@@ -282,20 +282,20 @@ public class MPersonelController implements Initializable {
         try (Connection conn = SQLTools.MSSQL()) {
             try (PreparedStatement pstmt = conn.prepareStatement(sql2)) {
                 pstmt.setString(1, pid.getText());
-                SQLTools.emptyslotsetnull(namech.getText(), pstmt, 2);
-                SQLTools.emptyslotsetnull(nameen.getText(), pstmt, 3);
-                SQLTools.emptyslotsetnull(nid.getText(), pstmt, 4);
-                SQLTools.emptyslotsetnull(StringVariation.datecom(by, bm, bd), pstmt, 5);
-                SQLTools.emptyslotsetnull(SQLTools.ValueGetId(getbldsql, blood), pstmt, 6);
-                SQLTools.emptyslotsetnull(cell.getText(), pstmt, 7);
-                SQLTools.emptyslotsetnull(tel.getText(), pstmt, 8);
-                SQLTools.emptyslotsetnull(address.getText(), pstmt, 9);
-                SQLTools.emptyslotsetnull(SQLTools.ValueGetId(getschsql, school), pstmt, 10);
-                SQLTools.emptyslotsetnull(SQLTools.ValueGetId(getdepsql, dep), pstmt, 11);
-                SQLTools.emptyslotsetnull(StringVariation.datecom(iy, im, id), pstmt, 12);
-                SQLTools.emptyslotsetnull(ername.getText(), pstmt, 13);
-                SQLTools.emptyslotsetnull(ercell.getText(), pstmt, 14);
-                SQLTools.emptyslotsetnull(ertel.getText(), pstmt, 15);
+                SQLTools.emptyUnitSetNull(namech.getText(), pstmt, 2);
+                SQLTools.emptyUnitSetNull(nameen.getText(), pstmt, 3);
+                SQLTools.emptyUnitSetNull(nid.getText(), pstmt, 4);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(by, bm, bd), pstmt, 5);
+                SQLTools.emptyUnitSetNull(SQLTools.ValueGetId(getbldsql, blood), pstmt, 6);
+                SQLTools.emptyUnitSetNull(cell.getText(), pstmt, 7);
+                SQLTools.emptyUnitSetNull(tel.getText(), pstmt, 8);
+                SQLTools.emptyUnitSetNull(address.getText(), pstmt, 9);
+                SQLTools.emptyUnitSetNull(SQLTools.ValueGetId(getschsql, school), pstmt, 10);
+                SQLTools.emptyUnitSetNull(SQLTools.ValueGetId(getdepsql, dep), pstmt, 11);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(iy, im, id), pstmt, 12);
+                SQLTools.emptyUnitSetNull(ername.getText(), pstmt, 13);
+                SQLTools.emptyUnitSetNull(ercell.getText(), pstmt, 14);
+                SQLTools.emptyUnitSetNull(ertel.getText(), pstmt, 15);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-修改員工基本資料", pid);
             }
@@ -304,12 +304,12 @@ public class MPersonelController implements Initializable {
     
     public void get_blood() throws Exception{
         String sql = "use MileStoneHRMS select b.Type_Name from BloodType as b";
-        SQLTools.SqlGetItem(sql,blood);
+        SQLTools.comboboxSetItem(sql,blood);
     }
     
     public void get_activity() throws Exception{
         String sql = "use MileStoneHRMS select a.Act_Name from Activity as a";
-        SQLTools.SqlGetItem(sql, status);
+        SQLTools.comboboxSetItem(sql, status);
     }
     
     public String set_pid() throws Exception{
@@ -317,7 +317,7 @@ public class MPersonelController implements Initializable {
         int year  = date.get(Calendar.YEAR);
         String y = StringVariation.right(Integer.toString(year), 2);
         String sql = "select cast(max(substring(p.P_ID, 6 ,8)) as int) from Personel as p";
-        int count = SQLTools.id_incre(SQLTools.Sql_Get_ID(sql));
+        int count = SQLTools.idAutoIncrease(SQLTools.sqlQuerySetId(sql));
         String r = Integer.toString(count);
         String newid = "MS" + y + "-" + StringVariation.right(("00"+r),3);
         return newid;

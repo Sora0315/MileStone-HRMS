@@ -59,7 +59,7 @@ public class MInvProperty2Controller implements Initializable {
                 items.setEditable(true);
                 items.setDisable(true);
                 StageControll.ComboBoxCtrl(items);
-                SQLTools.SqlGetItem(sql, items);
+                SQLTools.comboboxSetItem(sql, items);
             } catch (Exception e) {
             }
         }
@@ -286,8 +286,8 @@ public class MInvProperty2Controller implements Initializable {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, SQLTools.ValueGetId(askcombo, b));
                 pstmt.setString(2, amt.getText());
-                SQLTools.emptyslotsetnull(StringVariation.datecom(sy, sm, sd), pstmt, 3);
-                SQLTools.emptyslotsetnull(StringVariation.datecom(ey, em, ed), pstmt, 4);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(sy, sm, sd), pstmt, 3);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(ey, em, ed), pstmt, 4);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-修正員工持有財產清冊", name, b, amt);
             }

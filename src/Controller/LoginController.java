@@ -52,7 +52,7 @@ public class LoginController implements Initializable {
     @FXML
     public void Set_Group() throws Exception {
         String sql = "use SecurityDB select distinct s.GRP from SC as s";
-        SQLTools.SqlGetItem_S(sql, grp);
+        SQLTools.comboboxSetItemSecurityDB(sql, grp);
     }
 
     @FXML

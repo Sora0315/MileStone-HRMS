@@ -52,7 +52,7 @@ public class AddWkExpController implements Initializable {
                     String askpost = " and we.ExpPost_ID is NULL ";
                     if(SQLTools.ValueGetId(askpre, askpost, ename).isEmpty()){
                         String sql = "use MileStoneHRMS select cast(substring(ex.Exp_ID, 4, 8) as int) from WkExperience as ex ";
-                        String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                        String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                         String id = "EXP" + StringVariation.right(("00000" + num), 5);
                         eid.setText(id);
                         submit.setDisable(false);
@@ -69,14 +69,14 @@ public class AddWkExpController implements Initializable {
                     String idsql = "use MileStoneHRMS\n" +
                             "select max(cast((substring((ex.ExpPost_ID), 5, 9)) as int))\n" +
                             "from ExpPost as ex";
-                    String idnum = Integer.toString(SQLTools.id_incre(SQLTools.Sql_Get_ID(idsql)));
+                    String idnum = Integer.toString(SQLTools.idAutoIncrease(SQLTools.sqlQuerySetId(idsql)));
                     String pidset = "EXPO" + StringVariation.right(("00000" + idnum), 5);
                     pid.setText(pidset);
                     Data_Save("ExpPost", "ExpPost_ID, ExpPost_Name", pidset, pname);
                     String idsql2 = "use MileStoneHRMS\n" +
                             "select max(cast((substring((we.Exp_ID), 4, 8)) as int))\n" +
                             "from WkExperience as we ";
-                    String id2num = Integer.toString(SQLTools.id_incre(SQLTools.Sql_Get_ID(idsql2)));
+                    String id2num = Integer.toString(SQLTools.idAutoIncrease(SQLTools.sqlQuerySetId(idsql2)));
                     String eidset = "EXP" + StringVariation.right(("00000" + id2num), 5);
                     eid.setText(eidset); 
                     submit.setDisable(false);
@@ -89,7 +89,7 @@ public class AddWkExpController implements Initializable {
                         String askpost = "  and we.ExpPost_ID = ";
                         if(SQLTools.ValueGetId(askpre, askpost, ename, pid).isEmpty()){
                             String sql = "use MileStoneHRMS select cast(substring(ex.Exp_ID, 4, 8) as int) from WkExperience as ex ";
-                            String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                            String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                             String id = "EXP" + StringVariation.right(("00000" + num), 5);
                             eid.setText(id);
                             submit.setDisable(false);
@@ -147,8 +147,8 @@ public class AddWkExpController implements Initializable {
             try(PreparedStatement pstmt = conn.prepareStatement(sql)){
                 pstmt.setString(1, id.getText());
                 pstmt.setString(2, name.getText());
-                SQLTools.emptyslotsetnull(name2, pstmt, 3);
-                SQLTools.emptyslotsetnull(name3, pstmt, 4);
+                SQLTools.emptyUnitSetNull(name2, pstmt, 3);
+                SQLTools.emptyUnitSetNull(name3, pstmt, 4);
                 pstmt.execute();                
             }
         }

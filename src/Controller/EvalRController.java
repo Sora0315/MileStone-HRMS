@@ -38,8 +38,8 @@ public class EvalRController implements Initializable {
                 + " left join PStatus as ps on ps.P_ID = p.P_ID left join Activity as a on a.Act_ID = ps.Act_ID\n"
                 + " where a.Act_Name like '在職' and ps.EndD is null ";
         try {
-            SQLTools.SqlGetItem(sql, rating);
-            SQLTools.SqlGetItem(sql_name, name);
+            SQLTools.comboboxSetItem(sql, rating);
+            SQLTools.comboboxSetItem(sql_name, name);
         } catch (Exception e) {
         }
         name.setEditable(true);
@@ -110,10 +110,10 @@ public class EvalRController implements Initializable {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, id.getText());
                 pstmt.setString(2, StringVariation.datecom(evy, evm, evd));
-                SQLTools.emptyslotsetnull(StringVariation.datecom(sy, sm, sd), pstmt, 3);
-                SQLTools.emptyslotsetnull(StringVariation.datecom(ey, em, ed), pstmt, 4);
-                SQLTools.emptyslotsetnull(rating, pstmt, 5);
-                SQLTools.emptyslotsetnull(comment, pstmt, 6);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(sy, sm, sd), pstmt, 3);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(ey, em, ed), pstmt, 4);
+                SQLTools.emptyUnitSetNull(rating, pstmt, 5);
+                SQLTools.emptyUnitSetNull(comment, pstmt, 6);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-員工考核", id, rating, StringVariation.datecom(sy, sm, sd));
             }

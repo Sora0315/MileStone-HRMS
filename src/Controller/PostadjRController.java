@@ -39,8 +39,8 @@ public class PostadjRController implements Initializable {
                 + " where a.Act_Name like '在職' and ps.EndD is null ";
         String sql ="use MileStoneHRMS select p.Post_Name from Position as p";
         try{
-            SQLTools.SqlGetItem(sql_name, name);
-            SQLTools.SqlGetItem(sql, post);
+            SQLTools.comboboxSetItem(sql_name, name);
+            SQLTools.comboboxSetItem(sql, post);
         }
         catch(Exception e){
         }
@@ -110,7 +110,7 @@ public class PostadjRController implements Initializable {
                 pstmt.setString(1, id.getText());
                 pstmt.setString(2, set_postid());
                 pstmt.setString(3, StringVariation.datecom(sy, sm, sd));
-                SQLTools.emptyslotsetnull(StringVariation.datecom(ey, em, ed), pstmt, 4);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(ey, em, ed), pstmt, 4);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-員工職務異動登錄", name, post, StringVariation.datecom(sy, sm, sd));
             }

@@ -41,7 +41,7 @@ public class AddSpecController implements Initializable {
             String ask = "use MileStoneHRMS select s.Sp_Name from Speciality as s where s.Sp_Name = ";
             if(SQLTools.ValueGetId(ask, sname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(s.Sp_ID, 4, 8) as int) from Speciality as s ";
-                String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                 String id = "SPE" + StringVariation.right(("00000" + num), 5);
                 sid.setText(id);
                 submit.setDisable(false);

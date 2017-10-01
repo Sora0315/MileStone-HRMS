@@ -40,7 +40,7 @@ public class AddBloodtypeController implements Initializable {
             String ask = "use MileStoneHRMS select b.Type_Name from BloodType as b where b.Type_Name = ";
             if(SQLTools.ValueGetId(ask, bname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(b.Type_ID, 4, 8) as int) from BloodType as b ";
-                String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                 String id = "BLO" + StringVariation.right(("00000" + num), 5);
                 bid.setText(id);
                 submit.setDisable(false);

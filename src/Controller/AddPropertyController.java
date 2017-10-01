@@ -43,7 +43,7 @@ public class AddPropertyController implements Initializable {
             String ask = "use MileStoneHRMS select p.Pr_Name from Property as p where p.Pr_Name = ";
             if(SQLTools.ValueGetId(ask, pname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(p.Pr_ID, 3, 7) as int) from Property as p ";
-                String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                 String id = "PR" + StringVariation.right(("00000" + num), 5);
                 pid.setText(id);
                 submit.setDisable(false);
@@ -73,8 +73,8 @@ public class AddPropertyController implements Initializable {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, id.getText());
                 pstmt.setString(2, name.getText());
-                SQLTools.emptyslotsetnull(date, pstmt, 3);
-                SQLTools.emptyslotsetnull(name2, pstmt, 4);
+                SQLTools.emptyUnitSetNull(date, pstmt, 3);
+                SQLTools.emptyUnitSetNull(name2, pstmt, 4);
                 pstmt.execute();
                 AuditLog.Audit("準備程序-公司財產登錄", id, name);
             }

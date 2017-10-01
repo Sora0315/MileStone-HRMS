@@ -78,7 +78,7 @@ public class InvPropertyController implements Initializable {
         }
         for (ComboBox box : p) {
             try {
-                SQLTools.SqlGetItem(sql, box);
+                SQLTools.comboboxSetItem(sql, box);
                 box.setEditable(true);
                 StageControll.ComboBoxCtrl(box);
             } catch (Exception e) {
@@ -212,7 +212,7 @@ public class InvPropertyController implements Initializable {
 
     public void setid() throws Exception {
         String sql = "use MileStoneHRMS select cast(substring(i.InvP_ID, 2, 6) as int) from InvProperty as i ";
-        String num = Integer.toString(SQLTools.id_incre(((int) SQLTools.Sql_Get_ID(sql))));
+        String num = Integer.toString(SQLTools.idAutoIncrease(((int) SQLTools.sqlQuerySetId(sql))));
         String iid = "I" + StringVariation.right(("00000" + num), 5);
         id.setText(iid);
     }

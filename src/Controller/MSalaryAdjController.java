@@ -52,8 +52,8 @@ public class MSalaryAdjController implements Initializable {
         String ask = "use MileStoneHRMS select p.P_ID from Personel as p where p.Name_CH = ";
         String id = SQLTools.ValueGetId(ask, name);
         String sql = "use MileStoneHRMS select  cast(s.StartD as date), cast(s.Bef_BasePay as int), (select sum(cast(bf.Bef_Subsidy as int)) \n"
-                + " from BefSdy as bf where bf.P_ID =  '" + id + "' ), cast(s.Aft_BasePay as int), (select sum(cast(af.Aft_Subsidy as int)) \n" 
-                + " from AftSdy as af where af.P_ID =  '" + id + "' ), cast(s.Difference as int)  from SalaryAdjR as s where s.P_ID = " + "'" + id + "'" 
+                + " from BefSdy as bf where bf.P_ID =  '" + id + "'  and bf.StartD = s.StartD), cast(s.Aft_BasePay as int), (select sum(cast(af.Aft_Subsidy as int)) \n" 
+                + " from AftSdy as af where af.P_ID =  '" + id + "'  and af.StartD = s.StartD), cast(s.Difference as int)  from SalaryAdjR as s where s.P_ID = " + "'" + id + "'" 
                 + " order by s.StartD Asc";
         TableTools.DataSet(salary, 6, 200,col_name, sql);
         

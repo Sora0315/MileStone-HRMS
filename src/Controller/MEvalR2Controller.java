@@ -53,7 +53,7 @@ public class MEvalR2Controller implements Initializable {
         check.setDisable(true);
         String sql = "use MileStoneHRMS select r.Rating_Name from Rating as r";
         try {
-            SQLTools.SqlGetItem(sql, rating);
+            SQLTools.comboboxSetItem(sql, rating);
         } catch (Exception e) {
         }
     }
@@ -168,10 +168,10 @@ public class MEvalR2Controller implements Initializable {
         try (Connection conn = SQLTools.MSSQL()) {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, StringVariation.datecom(evy, evm, evd));
-                SQLTools.emptyslotsetnull(StringVariation.datecom(sy, sm, sd), pstmt, 2);
-                SQLTools.emptyslotsetnull(StringVariation.datecom(ey, em, ed), pstmt, 3);
-                SQLTools.emptyslotsetnull(rating, pstmt, 4);
-                SQLTools.emptyslotsetnull(comment, pstmt, 5);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(sy, sm, sd), pstmt, 2);
+                SQLTools.emptyUnitSetNull(StringVariation.datecom(ey, em, ed), pstmt, 3);
+                SQLTools.emptyUnitSetNull(rating, pstmt, 4);
+                SQLTools.emptyUnitSetNull(comment, pstmt, 5);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-修正員工考核紀錄", name, rating, StringVariation.datecom(sy, sm, sd));
             }

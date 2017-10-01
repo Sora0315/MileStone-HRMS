@@ -44,7 +44,7 @@ public class AddSchoolDepController implements Initializable {
             String ask = "use MileStoneHRMS select s.School_Name from GSch as s where s.School_Name = ";
             if(SQLTools.ValueGetId(ask, schname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(s.School_ID, 4, 8) as int) from GSch as s";
-                String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                 String id = "SCH" + StringVariation.right(("00000" + num), 5);
                 schid.setText(id);
                 submit.setDisable(false);
@@ -65,7 +65,7 @@ public class AddSchoolDepController implements Initializable {
             String ask = "use MileStoneHRMS select d.Dep_Name from GDep as d where d.Dep_Name = ";
             if(SQLTools.ValueGetId(ask, depname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(d.Dep_ID, 4, 8) as int) from GDep as d";
-                String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                 String id = "DEP" + StringVariation.right(("00000" + num), 5);
                 depid.setText(id);
                 submit.setDisable(false);

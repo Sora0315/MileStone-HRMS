@@ -50,7 +50,7 @@ public class MPostAdjR2Controller implements Initializable {
         submit.setDisable(true);
         String sql = "use MileStoneHRMS select p.Post_Name from Position as p";
         try {
-            SQLTools.SqlGetItem(sql, post);
+            SQLTools.comboboxSetItem(sql, post);
         } catch (Exception e) {
         }
     }

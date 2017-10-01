@@ -52,12 +52,12 @@ public class SalaryAdjController implements Initializable {
         String sql = "use MileStoneHRMS select s.Type_Name from SdyType as s ";
         ComboBox [] allclist = {fsname1, fsname2, fsname3, asname1, asname2, asname3};
         try{
-            SQLTools.SqlGetItem(sql_name, name);
+            SQLTools.comboboxSetItem(sql_name, name);
             StageControll.ComboBoxCtrl(name);
             name.setEditable(true);
             AutoCompleteComboBox acc = new AutoCompleteComboBox(name);
             for(ComboBox items : allclist){
-                SQLTools.SqlGetItem(sql, items);
+                SQLTools.comboboxSetItem(sql, items);
                 StageControll.ComboBoxCtrl(items);
                 items.setEditable(true);
                 AutoCompleteComboBox autoCompleteComboBox = new AutoCompleteComboBox(items);
@@ -182,12 +182,12 @@ public class SalaryAdjController implements Initializable {
     
     public void Data_Save() throws Exception{
         int  a, b, c, d, e, f;
-        a = SQLTools.txtnotemptytoint(fspay1);
-        b = SQLTools.txtnotemptytoint(fspay2);
-        c = SQLTools.txtnotemptytoint(fspay3);
-        d = SQLTools.txtnotemptytoint(aspay1);
-        e = SQLTools.txtnotemptytoint(aspay2);
-        f = SQLTools.txtnotemptytoint(aspay3);
+        a = SQLTools.textfieldConvertInt(fspay1);
+        b = SQLTools.textfieldConvertInt(fspay2);
+        c = SQLTools.textfieldConvertInt(fspay3);
+        d = SQLTools.textfieldConvertInt(aspay1);
+        e = SQLTools.textfieldConvertInt(aspay2);
+        f = SQLTools.textfieldConvertInt(aspay3);
         String sql = "use MileStoneHRMS insert into SalaryAdjR(P_ID, StartD, Bef_BasePay, Aft_BasePay, Difference)"
                 + " values(?,?,?,?,?)";
         
@@ -195,9 +195,9 @@ public class SalaryAdjController implements Initializable {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, id.getText());
                 pstmt.setString(2, StringVariation.datecom(ay, am, ad));
-                SQLTools.emptyslotsetnull(fbasepay, pstmt, 3);
-                SQLTools.emptyslotsetnull(abasepay, pstmt, 4);
-                SQLTools.emptyslotsetnull(diff, pstmt, 5);
+                SQLTools.emptyUnitSetNull(fbasepay, pstmt, 3);
+                SQLTools.emptyUnitSetNull(abasepay, pstmt, 4);
+                SQLTools.emptyUnitSetNull(diff, pstmt, 5);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-員工薪資調整紀錄登錄", name);
             }
@@ -241,20 +241,20 @@ public class SalaryAdjController implements Initializable {
     
     public void ftotal(){
         int a, b, c, d;
-        a = SQLTools.txtnotemptytoint(fbasepay);
-        b = SQLTools.txtnotemptytoint(fspay1);
-        c = SQLTools.txtnotemptytoint(fspay2);
-        d = SQLTools.txtnotemptytoint(fspay3);
+        a = SQLTools.textfieldConvertInt(fbasepay);
+        b = SQLTools.textfieldConvertInt(fspay1);
+        c = SQLTools.textfieldConvertInt(fspay2);
+        d = SQLTools.textfieldConvertInt(fspay3);
         String tal = String.valueOf((a+b+c+d));
         ftotal.setText(tal);
     }
     
     public void atotal(){
         int a, b, c, d;
-        a = SQLTools.txtnotemptytoint(abasepay);
-        b = SQLTools.txtnotemptytoint(aspay1);
-        c = SQLTools.txtnotemptytoint(aspay2);
-        d = SQLTools.txtnotemptytoint(aspay3);
+        a = SQLTools.textfieldConvertInt(abasepay);
+        b = SQLTools.textfieldConvertInt(aspay1);
+        c = SQLTools.textfieldConvertInt(aspay2);
+        d = SQLTools.textfieldConvertInt(aspay3);
         String tal = String.valueOf((a+b+c+d));
         atotal.setText(tal);
     }

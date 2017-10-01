@@ -85,7 +85,7 @@ public class EOvertimeController implements Initializable {
     public void lo_item_set() throws Exception {
         String sql = "use MileStoneHRMS select l.LO_Name from LO as l "
                 + " where l.LO_Name not like '%假%'  or l.LO_Name like '%停止%' ";
-        SQLTools.SqlGetItem(sql, choose);
+        SQLTools.comboboxSetItem(sql, choose);
     }
 
     @FXML
@@ -147,13 +147,13 @@ public class EOvertimeController implements Initializable {
                 pstmt.setString(1, UserInfo.emp_pid);
                 pstmt.setString(2, SQLTools.ValueGetId(ask, choose));
                 pstmt.setString(3, StringVariation.datetimecom(sy, sm, sd, sh, smin));
-                SQLTools.emptyslotsetnull(StringVariation.datetimecom(ey, em, ed, eh, emin), pstmt, 4);
+                SQLTools.emptyUnitSetNull(StringVariation.datetimecom(ey, em, ed, eh, emin), pstmt, 4);
                 if (hrs.getText().isEmpty()) {
                     pstmt.setNull(5, java.sql.Types.VARCHAR);
                 } else {
                     pstmt.setString(5, hrs.getText());
                 }
-                SQLTools.emptyslotsetnull(cause, pstmt, 6);
+                SQLTools.emptyUnitSetNull(cause, pstmt, 6);
                 pstmt.setString(7, EPreOvertimeController.ApprP_ID);
                 pstmt.execute();
                 AuditLog.Audit("員工申請-加班", UserInfo.emp_pid, choose, StringVariation.datetimecom(sy, sm, sd, sh, smin), EPreOvertimeController.ApprP_ID);

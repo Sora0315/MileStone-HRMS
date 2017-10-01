@@ -41,7 +41,7 @@ public class AddRatingController implements Initializable {
             String ask = "use MileStoneHRMS select r.Rating_Name from Rating as r where r.Rating_Name = ";
             if(SQLTools.ValueGetId(ask, rname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(r.Ra_ID, 3, 7) as int) from Rating as r ";
-                String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                 String id = "RA" + StringVariation.right(("00000" + num), 5);
                 rid.setText(id);
                 submit.setDisable(false);

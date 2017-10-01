@@ -55,7 +55,7 @@ public class MAbWtimeR2Controller implements Initializable {
         submit.setDisable(true);
         String sql = "use MileStoneHRMS select l.LO_Name from LO as l";
         try {
-            SQLTools.SqlGetItem(sql, lo);
+            SQLTools.comboboxSetItem(sql, lo);
             AutoCompleteComboBox autoCompleteComboBox = new AutoCompleteComboBox(lo);
         } catch (Exception e) {
         }
@@ -191,13 +191,13 @@ public class MAbWtimeR2Controller implements Initializable {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, set_loid());
                 pstmt.setString(2, StringVariation.datetimecom(sy, sm, sd, sh, smin));
-                SQLTools.emptyslotsetnull(StringVariation.datetimecom(ey, em, ed, eh, emin), pstmt, 3);
+                SQLTools.emptyUnitSetNull(StringVariation.datetimecom(ey, em, ed, eh, emin), pstmt, 3);
                 if (d.getText().isEmpty() && h.getText().isEmpty()) {
                     pstmt.setNull(4, java.sql.Types.VARCHAR);
                 } else {
                     pstmt.setString(4, String.valueOf(Integer.valueOf(d.getText()) * 24 + Integer.valueOf(h.getText())));
                 }
-                SQLTools.emptyslotsetnull(cause, pstmt, 5);
+                SQLTools.emptyUnitSetNull(cause, pstmt, 5);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-修正員工異常工時紀錄", name, lo, StringVariation.datetimecom(sy, sm, sd, sh, smin));
             }

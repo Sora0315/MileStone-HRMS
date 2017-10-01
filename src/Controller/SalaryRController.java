@@ -54,11 +54,11 @@ public class SalaryRController implements Initializable {
         String sql ="use MileStoneHRMS select t.Type_Name from BonusType as t ";
         String sql2 = "use MileStoneHRMS select s.Type_Name from SdyType as s ";
         try{
-            SQLTools.SqlGetItem(sql_name, name);
-            SQLTools.SqlGetItem(sql, btype1);
-            SQLTools.SqlGetItem(sql, btype2);            
+            SQLTools.comboboxSetItem(sql_name, name);
+            SQLTools.comboboxSetItem(sql, btype1);
+            SQLTools.comboboxSetItem(sql, btype2);            
             for(ComboBox items : list){
-                SQLTools.SqlGetItem(sql2,items);
+                SQLTools.comboboxSetItem(sql2,items);
             }   
         }
         catch(Exception e){
@@ -175,9 +175,9 @@ public class SalaryRController implements Initializable {
                 } else {
                     pstmt.setNull(4, java.sql.Types.VARCHAR);
                 }
-                SQLTools.emptyslotsetnull(basepay, pstmt, 5);
-                SQLTools.emptyslotsetnull(lh, pstmt, 6);
-                SQLTools.emptyslotsetnull(total, pstmt, 7);
+                SQLTools.emptyUnitSetNull(basepay, pstmt, 5);
+                SQLTools.emptyUnitSetNull(lh, pstmt, 6);
+                SQLTools.emptyUnitSetNull(total, pstmt, 7);
                 pstmt.execute();
                 AuditLog.Audit("主管/HR-員工薪資紀錄登錄", name);
             }
@@ -229,13 +229,13 @@ public class SalaryRController implements Initializable {
     
     public void total(){
         int a, b, c, d, e, f, g;
-        a = SQLTools.txtnotemptytoint(basepay);
-        b = SQLTools.txtnotemptytoint(spay1);
-        c = SQLTools.txtnotemptytoint(spay2);
-        d = SQLTools.txtnotemptytoint(spay3);
-        e = SQLTools.txtnotemptytoint(bpay1);
-        g = SQLTools.txtnotemptytoint(bpay2);
-        f = SQLTools.txtnotemptytoint(lh);
+        a = SQLTools.textfieldConvertInt(basepay);
+        b = SQLTools.textfieldConvertInt(spay1);
+        c = SQLTools.textfieldConvertInt(spay2);
+        d = SQLTools.textfieldConvertInt(spay3);
+        e = SQLTools.textfieldConvertInt(bpay1);
+        g = SQLTools.textfieldConvertInt(bpay2);
+        f = SQLTools.textfieldConvertInt(lh);
         total.setText(String.valueOf((a+b+c+d+e+g-f)));
     }
     

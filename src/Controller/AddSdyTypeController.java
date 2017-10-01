@@ -41,7 +41,7 @@ public class AddSdyTypeController implements Initializable {
             String ask = "use MileStoneHRMS select s.Type_Name from SdyType as s where s.Type_Name = ";
             if(SQLTools.ValueGetId(ask, bname).isEmpty()){
                 String sql = "use MileStoneHRMS select cast(substring(s.Type_ID, 4, 8) as int) from SdyType as s ";
-                String num = Integer.toString(SQLTools.id_incre(((int)SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int)SQLTools.sqlQuerySetId(sql))));
                 String id = "SDY" + StringVariation.right(("00000" + num), 5);
                 bid.setText(id);
                 submit.setDisable(false);

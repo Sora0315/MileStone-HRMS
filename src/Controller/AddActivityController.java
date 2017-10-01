@@ -41,7 +41,7 @@ public class AddActivityController implements Initializable {
             String ask = "use MileStoneHRMS select a.Act_Name from Activity as a where a.Act_Name = ";
             if (SQLTools.ValueGetId(ask, aname).isEmpty()) {
                 String sql = "use MileStoneHRMS select cast(substring(a.Act_ID, 4, 8) as int) from Activity as a ";
-                String num = Integer.toString(SQLTools.id_incre(((int) SQLTools.Sql_Get_ID(sql))));
+                String num = Integer.toString(SQLTools.idAutoIncrease(((int) SQLTools.sqlQuerySetId(sql))));
                 String id = "ACT" + StringVariation.right(("00000" + num), 5);
                 aid.setText(id);
                 submit.setDisable(false);
